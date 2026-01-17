@@ -1,0 +1,12 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. **Joke:** Why cant pirates learn the alphabet? because they spend years at c.  ,,,,
+   **CSV Result:** Why cant pirates learn the alphabet?,c,The letter C is the third letter of the English alphabet.,The ocean is often referred to as the sea.,"During his speech, he addressed the crowd sitting at sea level."
+2. **Joke:** Did you hear about the houses that fell in love? they had a lawn-distance relationship.  ,,,,
+   **CSV Result:** Did you hear about the houses that fell in love?,lawn,A lawn is a well-maintained area of grass.,The children played on the lawn during the summer.,They walked down the lawn to greet their neighbors.
+3. **Joke:** What are a corporations favourite letters? capital is.  ,,,,
+   **CSV Result:** What are a corporations favourite letters?,capital,Capital refers to financial assets or resources.,The company secured enough capital to expand its operations.,The capital letter A indicates the beginning of a sentence.
+4. **Joke:** I dont want to play a band instrument at school because I only get f minor.  ,,,,
+   **CSV Result:** I dont want to play a band instrument at school because I only get f minor.,minor,Minor typically refers to a musical scale or chord.,The child took minor lessons in piano.,The minor injuries sustained in the accident did not require hospitalization.
+5. **Joke:** Why dont lobsters ever share anything? because theyre shellfish.  ,,,,
+   **CSV Result:** Why dont lobsters ever share anything?,shellfish,"Shellfish refers to aquatic animals with a shell, such as lobsters and crabs.",She ordered a plate of shellfish for dinner.,He was allergic to shellfish and had to avoid seafood altogether.
+"This completes the requirement for the jokes based on words with two meanings, providing serious sentences as requested.",,,,

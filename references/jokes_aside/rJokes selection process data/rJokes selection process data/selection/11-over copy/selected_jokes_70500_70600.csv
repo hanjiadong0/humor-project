@@ -1,0 +1,15 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. **Joke:** My kid swallowed a torch today... its ok - it was removed and now hes delighted.,,,,
+   - **Word:** torch,,,,
+"   - **Explanation:** In this context, torch can mean a source of light (like a flashlight) and also refers to a hand-held flame lamp.",,,,
+"   - **First new sentence:** The torch lit up the dark cave, revealing hidden treasures inside.",,,,
+   - **Second new sentence:** He became angry when he saw someone trying to torch his favorite car.,,,,
+2. **Joke:** Why was the tampon flying down the school hallway? he was late for his next period.,,,,
+   - **Word:** period,,,,
+"   - **Explanation:** Here, period refers to both a punctuation mark and to a menstrual cycle.",,,,
+   - **First new sentence:** The teacher explained the importance of the period in writing sentences correctly.,,,,
+   - **Second new sentence:** The menstrual period is a natural part of many womens lives.,,,,
+Here is the output in the specified format:,,,,
+My kid swallowed a torch today... its ok - it was removed and now hes delighted., torch," In this context, torch can mean a source of light (like a flashlight) and also refers to a hand-held flame lamp."," The torch lit up the dark cave, revealing hidden treasures inside.", He became angry when he saw someone trying to torch his favorite car.
+Why was the tampon flying down the school hallway? he was late for his next period., period," Here, period refers to both a punctuation mark and to a menstrual cycle.", The teacher explained the importance of the period in writing sentences correctly., The menstrual period is a natural part of many womens lives.
+No other jokes from the list met the specified criteria.,,,,

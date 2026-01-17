@@ -1,0 +1,14 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. When a bull wants to listen to a cassette what does he put on his head? steer phones!,,,,
+   , steer ," A steer is a castrated male bovine, commonly raised for beef. ", The farmer decided to sell the steer at the market for a good price. , The steer was always calm and easy to manage on the ranch.
+2. Did you hear about the guy who robbed blind people? nobody saw it coming.,,,,
+   , nobody , Nobody refers to no person or no one. , Nobody in the room felt like speaking up about the unfair treatment. , Nobody was surprised when the announcement was made.
+3. Kim jong-un has promised a new clear future for north korea. oops! spelt nuclear wrong.,,,,
+   , nuclear ," Nuclear pertains to the nucleus of an atom, often related to energy or weapons. ", The country is focusing on developing nuclear energy as a clean power source. , The scientist presented a paper on nuclear fusion at the international conference.
+4. I lost my thesaurus when I was little... i couldnt find the words to describe how I felt.,,,,
+   , thesaurus , A thesaurus is a reference book or resource for finding synonyms and antonyms. , She consulted a thesaurus to find the perfect synonym for her essay. , The writer always kept a thesaurus handy for expanding his vocabulary.
+Here’s the CSV formatted output:,,,,
+When a bull wants to listen to a cassette what does he put on his head? steer phones!, steer," A steer is a castrated male bovine, commonly raised for beef.", The farmer decided to sell the steer at the market for a good price., The steer was always calm and easy to manage on the ranch.
+Did you hear about the guy who robbed blind people? nobody saw it coming., nobody, Nobody refers to no person or no one., Nobody in the room felt like speaking up about the unfair treatment., Nobody was surprised when the announcement was made.
+Kim jong-un has promised a new clear future for north korea. oops! spelt nuclear wrong., nuclear," Nuclear pertains to the nucleus of an atom, often related to energy or weapons.", The country is focusing on developing nuclear energy as a clean power source., The scientist presented a paper on nuclear fusion at the international conference.
+I lost my thesaurus when I was little... i couldnt find the words to describe how I felt., thesaurus, A thesaurus is a reference book or resource for finding synonyms and antonyms., She consulted a thesaurus to find the perfect synonym for her essay., The writer always kept a thesaurus handy for expanding his vocabulary.

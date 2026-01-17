@@ -1,0 +1,22 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. **Joke**: Why didnt the cashier get the punchline? it didnt register.  ,,,,
+   **Word**: register  ,,,,
+   **Explanation**: The word register can mean to record or document something (like a transaction) and it can also mean to understand or recognize something (like a joke).  ,,,,
+   **Output**: Why didnt the cashier get the punchline? it didnt register., register, The word register can mean to record or document something and it can also mean to understand or recognize something., The cashier needed to register the transaction for a sale., I didnt register the joke until someone explained it to me.
+2. **Joke**: Whats the best time to go to the dentist? tooth hurty!  ,,,,
+   **Word**: tooth  ,,,,
+   **Explanation**: The word tooth refers to the hard structures in the mouth used for biting and chewing food and can also refer to the pain associated with dental issues.  ,,,,
+   **Output**: Whats the best time to go to the dentist? tooth hurty!, tooth, The word tooth refers to the hard structures in the mouth and can also refer to the pain associated with dental issues., I have a tooth that is aching and needs to be checked., The dentist says my tooth has a cavity that needs to be filled.
+3. **Joke**: Why would Koreans make great jazz musicians? because they have seoul.  ,,,,
+   **Word**: soul  ,,,,
+   **Explanation**: The word soul can refer to the emotional or spiritual essence of a person and is also a genre of music that is deeply expressive and relates to jazz.  ,,,,
+   **Output**: Why would Koreans make great jazz musicians? because they have seoul., soul, The word soul refers to the emotional essence of a person and is also a music genre., She poured her soul into the song she was singing., Jazz music often conveys the soul of its performers.
+4. **Joke**: What do ghosts do when theyre sad? they get in an elevator to lift their spirits.  ,,,,
+   **Word**: lift  ,,,,
+   **Explanation**: The word lift can mean to raise something physically to a higher position and can also mean to elevate someones mood or spirits.  ,,,,
+   **Output**: What do ghosts do when theyre sad? they get in an elevator to lift their spirits., lift, The word lift can mean to raise something physically and can also mean to elevate someones mood., Can you lift that box to the top shelf?, I listen to music to lift my spirits when Im feeling down.
+### Final CSV Output:,,,,
+Why didnt the cashier get the punchline? it didnt register., register, The word register can mean to record or document something and it can also mean to understand or recognize something., The cashier needed to register the transaction for a sale., I didnt register the joke until someone explained it to me.
+Whats the best time to go to the dentist? tooth hurty!, tooth, The word tooth refers to the hard structures in the mouth and can also refer to the pain associated with dental issues., I have a tooth that is aching and needs to be checked., The dentist says my tooth has a cavity that needs to be filled.
+Why would Koreans make great jazz musicians? because they have seoul., soul, The word soul refers to the emotional essence of a person and is also a music genre., She poured her soul into the song she was singing., Jazz music often conveys the soul of its performers.
+What do ghosts do when theyre sad? they get in an elevator to lift their spirits., lift, The word lift can mean to raise something physically and can also mean to elevate someones mood., Can you lift that box to the top shelf?, I listen to music to lift my spirits when Im feeling down.

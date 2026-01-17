@@ -1,0 +1,32 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. **Sentence:** Q: what do you call a cracked window? a: a pane in the glass.,,,,
+   - **Word:** pane,,,,
+   - **Explanation:** The word pane has two meanings: it refers to a pane of glass and is a homophone for pain.,,,,
+   - **First New Sentence:** The window has a large pane that needs to be replaced.,,,,
+   - **Second New Sentence:** The expression of pane on her face revealed her discomfort.,,,,
+2. **Sentence:** What did the neurotic pig say to the farmer? you take me for grunted.,,,,
+   - **Word:** grunted,,,,
+   - **Explanation:** The word grunted refers to the hog sound and plays on taken for granted.,,,,
+   - **First New Sentence:** The pig grunted loudly when it was startled.,,,,
+   - **Second New Sentence:** Many people feel they are too often taken for granted at work.,,,,
+3. **Sentence:** Why dont hydrocarbons make good criminals? theyre always getting com-busted.,,,,
+   - **Word:** busted,,,,
+   - **Explanation:** The word busted means to get caught (as in crime) and refers to broken.,,,,
+   - **First New Sentence:** The vase got busted after it fell off the shelf.,,,,
+   - **Second New Sentence:** The police busted the gang during their operation.,,,,
+4. **Sentence:** What do you call an exploding dinosaur? dino-mite,,,,
+   - **Word:** mite,,,,
+   - **Explanation:** The word mite refers to a tiny creature and also serves as a play on might.,,,,
+   - **First New Sentence:** The mite was found crawling on the leaf.,,,,
+   - **Second New Sentence:** He might go to the park later if the weather permits.,,,,
+5. **Sentence:** People who talk about me behind my back discussed me.,,,,
+   - **Word:** discussed,,,,
+"   - **Explanation:** The word discussed refers to talking about someone, but plays on discussed as in being deliberated upon.",,,,
+"   - **First New Sentence:** During the class, we discussed various topics in detail.",,,,
+   - **Second New Sentence:** The committee discussed the future of the community program.,,,,
+### CSV Format:,,,,
+Q: what do you call a cracked window? a: a pane in the glass., pane, The word pane has two meanings: it refers to a pane of glass and is a homophone for pain., The window has a large pane that needs to be replaced., The expression of pane on her face revealed her discomfort.
+What did the neurotic pig say to the farmer? you take me for grunted., grunted, The word grunted refers to the hog sound and plays on taken for granted. , The pig grunted loudly when it was startled., Many people feel they are too often taken for granted at work.
+Why dont hydrocarbons make good criminals? theyre always getting com-busted., busted, The word busted means to get caught (as in crime) and refers to broken. , The vase got busted after it fell off the shelf., The police busted the gang during their operation.
+What do you call an exploding dinosaur? dino-mite, mite, The word mite refers to a tiny creature and also serves as a play on might. , The mite was found crawling on the leaf., He might go to the park later if the weather permits.
+People who talk about me behind my back discussed me., discussed," The word discussed refers to talking about someone, but plays on discussed as in being deliberated upon."," During the class, we discussed various topics in detail.", The committee discussed the future of the community program.

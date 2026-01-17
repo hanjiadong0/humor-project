@@ -1,0 +1,26 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. **Joke**: Why does everyone find the absolute value of zero so funny? l0l  ,,,,
+   - **Word**: value  ,,,,
+"   - **Explanation**: The term absolute value in mathematics refers to the non-negative value of a number, while value can also denote worth or significance in a broader sense.  ",,,,
+   - **First New Sentence**: The value of the item was determined based on its market price.  ,,,,
+   - **Second New Sentence**: The absolute value of the negative number is always positive.,,,,
+2. **Joke**: What does a flame smell like? burnt nose hair.  ,,,,
+   - **Word**: flame  ,,,,
+"   - **Explanation**: In one context, flame refers to the visible, gaseous part of a fire, while in another, it can refer to an expression of intense passion or anger.  ",,,,
+   - **First New Sentence**: The flame flickered brightly in the dark room.  ,,,,
+   - **Second New Sentence**: Her words were a flame of anger that ignited the argument.,,,,
+3. **Joke**: Got a dank sub woofer for $100 today whoops wrong sub.  ,,,,
+   - **Word**: sub  ,,,,
+"   - **Explanation**: In the context of the joke, sub can mean a subwoofer, a type of speaker, and also refer to a submarine sandwich.  ",,,,
+   - **First New Sentence**: I ordered a sub from the deli for lunch.  ,,,,
+   - **Second New Sentence**: The sub was powerful enough to produce deep bass sounds.,,,,
+4. **Joke**: Ive entered a competition on the armitage shanks website its basically a win loos situation.  ,,,,
+   - **Word**: loos  ,,,,
+"   - **Explanation**: The term loos is a colloquial term for restrooms, while loose means not tightly secured or free from restrictions.  ",,,,
+   - **First New Sentence**: The public loos were located just around the corner from the park.  ,,,,
+"   - **Second New Sentence**: The bolts were loose, causing the chair to wobble.",,,,
+Here’s the data in the requested CSV format:,,,,
+Why does everyone find the absolute value of zero so funny? l0l,value,"The term absolute value refers to the non-negative value of a number, while value can denote worth or significance.",The value of the item was determined based on its market price.,The absolute value of the negative number is always positive.
+What does a flame smell like? burnt nose hair.,flame,"In one context, flame refers to the visible part of fire, while it can also denote intense passion or anger.",The flame flickered brightly in the dark room.,Her words were a flame of anger that ignited the argument.
+Got a dank sub woofer for $100 today whoops wrong sub.,sub,"In the joke, sub means a subwoofer, and also refers to a submarine sandwich.",I ordered a sub from the deli for lunch.,The sub was powerful enough to produce deep bass sounds.
+Ive entered a competition on the armitage shanks website its basically a win loos situation.,loos,"The term loos is a colloquial term for restrooms, while loose means not tightly secured.",The public loos were located just around the corner from the park.,"The bolts were loose, causing the chair to wobble."

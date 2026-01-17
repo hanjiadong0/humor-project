@@ -1,0 +1,10 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. **Joke:** Do penises and testicles have much in common? not really. theres a vas deferens between the two.  ,,,,
+   **CSV Result:** Theres a vas deferens between the two, deferens, The term deferens refers to the duct that conveys sperm from the testicle to the urethra., The vas deferens is part of the male reproductive system., The term also implies a difference or an incongruence between two things.
+2. **Joke:** Where do gay midgets come out from? the cabinet.  ,,,,
+   **CSV Result:** Where do gay midgets come out from?, cabinet, A cabinet is a piece of furniture with shelves and doors., The term cabinet refers to a group of advisers to the president or a similar official body.,
+3. **Joke:** What is a pirates favorite letter? hell always like r.... but his true love is the c  ,,,,
+   **CSV Result:** What is a pirates favorite letter?, sea, The letter C is the third letter of the English alphabet., The C refers to the vast body of saltwater that covers most of the Earths surface.,
+4. **Joke:** What do you call a toads favorite kind of beer? one with a lot of hops.  ,,,,
+   **CSV Result:** What do you call a toads favorite kind of beer?, hops," Hops are flowers used as a bittering, flavoring, and stability agent in beer.", Hops also refers to the act of jumping or moving rapidly up and down.,
+Note: Some jokes may play with concepts that lead to different meanings but might not adhere strictly to single-word requirements or both meanings in a reasonable context for new sentences. The selected ones fit your criteria best based on the data provided.,,,,

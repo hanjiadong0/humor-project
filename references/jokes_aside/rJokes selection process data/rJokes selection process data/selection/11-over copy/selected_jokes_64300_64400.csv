@@ -1,0 +1,23 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. **Joke:** Why were the stadium so cool? It was full of fans.,,,,
+   - **Explanation:** The word fans refers to both supporters of a team and mechanical devices that circulate air.,,,,
+   - **CSV Entry:** Why were the stadium so cool? It was full of fans., fans, The word fans can mean supporters of a team or mechanical devices that circulate air., The stadium was filled with enthusiastic fans cheering for their favorite team., The ceiling was equipped with several fans to keep the audience comfortable.
+2. **Joke:** How is a broken clock better than a politician? The clock is still right twice a day.,,,,
+"   - **Explanation:** The word right can mean correct, as well as the direction opposite of left.",,,,
+   - **CSV Entry:** How is a broken clock better than a politician? The clock is still right twice a day., right, The word right can mean correct or the direction opposite of left., The answer to the question was right and consistent with the facts.," When you face the east, the right side is where the sun rises."
+3. **Joke:** What does batman put in his drink? Just ice.,,,,
+"   - **Explanation:** The word ice can refer to frozen water, or slang for diamonds.",,,,
+   - **CSV Entry:** What does batman put in his drink? Just ice., ice, The word ice can mean frozen water or diamonds., I like to chill my beverages with ice for a refreshing taste., The diamond necklace she wore was adorned with beautiful pieces of ice.
+4. **Joke:** Whats brown and rhymes with snoop? Dr. Dre.,,,,
+   - **Explanation:** The word snoop can refer both to secretly trying to find out information and the famous rapper Snoop Dogg.,,,,
+   - **CSV Entry:** Whats brown and rhymes with snoop? Dr. Dre., snoop, The word snoop can mean secretly investigating or it refers to the rapper., Investigators often need to snoop around to gather evidence., His mentor in music was the famous rapper known as Snoop Dogg.
+5. **Joke:** Why do sailors drink so much? We sleep better when the room is moving.,,,,
+   - **Explanation:** The word moving can mean the action of changing position or referring to feelings of emotional significance like being moved by something.,,,,
+   - **CSV Entry:** Why do sailors drink so much? We sleep better when the room is moving., moving, The word moving can mean changing position or having emotional significance.," After a long day, the moving ship helped him fall asleep more easily.", The story had a moving conclusion that resonated with many readers.
+### Resulting CSV File Content:,,,,
+Why were the stadium so cool? It was full of fans., fans, The word fans can mean supporters of a team or mechanical devices that circulate air., The stadium was filled with enthusiastic fans cheering for their favorite team., The ceiling was equipped with several fans to keep the audience comfortable.
+How is a broken clock better than a politician? The clock is still right twice a day., right, The word right can mean correct or the direction opposite of left., The answer to the question was right and consistent with the facts.," When you face the east, the right side is where the sun rises."
+What does batman put in his drink? Just ice., ice, The word ice can mean frozen water or diamonds., I like to chill my beverages with ice for a refreshing taste., The diamond necklace she wore was adorned with beautiful pieces of ice.
+Whats brown and rhymes with snoop? Dr. Dre., snoop, The word snoop can mean secretly investigating or it refers to the rapper., Investigators often need to snoop around to gather evidence., His mentor in music was the famous rapper known as Snoop Dogg.
+Why do sailors drink so much? We sleep better when the room is moving., moving, The word moving can mean changing position or having emotional significance.," After a long day, the moving ship helped him fall asleep more easily.", The story had a moving conclusion that resonated with many readers.
+"Please note that I could find only four jokes that strictly conform to your criteria based on meanings and single-word definitions. If you need more entries or any adjustments, feel free to ask!",,,,

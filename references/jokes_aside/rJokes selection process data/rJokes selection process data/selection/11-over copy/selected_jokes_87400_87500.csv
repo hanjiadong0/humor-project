@@ -1,0 +1,22 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. I hate stools... they are a bunch of sons of benches.,,,,
+   - **Word:** stools,,,,
+   - **First Meaning Sentence:** I need to buy new stools for my kitchen counter.,,,,
+   - **Second Meaning Sentence:** The stool sample provided by the patient showed no signs of infection.,,,,
+2. Why shouldnt you have coffee while on the clock? because that would be grounds for termination!,,,,
+   - **Word:** grounds,,,,
+   - **First Meaning Sentence:** The coffee grounds were messy after brewing a fresh pot.,,,,
+   - **Second Meaning Sentence:** The grounds for the dismissal were clearly stated in the employee handbook.,,,,
+3. How do you order a glass of water in russia? ask for a virgin vodka.,,,,
+   - **Word:** virgin,,,,
+   - **First Meaning Sentence:** The young woman was a virgin until she found the right partner.,,,,
+   - **Second Meaning Sentence:** The wine she chose was a virgin blend with no added sulfites.,,,,
+4. When you run out of milk from a cow you move to the udder one.,,,,
+   - **Word:** udder,,,,
+   - **First Meaning Sentence:** The farmer checked the udder for any signs of infection.,,,,
+   - **Second Meaning Sentence:** The concept of the udder is often used in discussions about dairy production.,,,,
+"Now, formatted for a CSV file with a semicolon separator:",,,,
+I hate stools... they are a bunch of sons of benches., stools, A stool is a simple seat without back or arms., I need to buy new stools for my kitchen counter., The stool sample provided by the patient showed no signs of infection.
+Why shouldnt you have coffee while on the clock? because that would be grounds for termination!, grounds, Grounds refer to the residue left after brewing coffee or can refer to the reasons for action., The coffee grounds were messy after brewing a fresh pot., The grounds for the dismissal were clearly stated in the employee handbook.
+How do you order a glass of water in russia? ask for a virgin vodka., virgin, Virgin can refer to someone who has not engaged in sexual intercourse or an untainted condition., The young woman was a virgin until she found the right partner., The wine she chose was a virgin blend with no added sulfites.
+When you run out of milk from a cow you move to the udder one., udder, An udder is the part of a female cow that produces milk., The farmer checked the udder for any signs of infection., The concept of the udder is often used in discussions about dairy production.

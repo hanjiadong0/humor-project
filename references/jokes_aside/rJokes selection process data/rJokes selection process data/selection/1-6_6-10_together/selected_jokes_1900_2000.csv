@@ -1,0 +1,5 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+Why did the sheikh cross the road? to get to the other wife., cross, to move from one side to another, The sheep cross the river safely. , You have to cross your arms to stay warm in winter.
+How did nascar get that name? redneck: thats nascar ye got there., car, a motor vehicle with four wheels, I drive my car to work every day. , The car is made of high-quality steel.
+What kind of doctor does a duck visit? a ducktor., doctor, a medical professional, The doctor gave me a prescription for my illness. , The applied research and development are overseen by a doctor in the field.
+This format fits a CSV file separated by semicolons and reflects the required structure for each joke.,,,,

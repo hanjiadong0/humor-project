@@ -1,0 +1,23 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. **Joke**: How do you make holy water? boil the hell out of it...,,,,
+   - **Word**: hell,,,,
+   - **Explanation**: Hell refers to a place of suffering and hell is also used in an exclamatory sense to refer to intensity or extreme situation.,,,,
+   - **New Sentences**:,,,,
+     - **First new sentence**: Many people believe that hell is a place of eternal punishment after death.,,,,
+     - **Second new sentence**: The temperature in summer can feel like hell on Earth when it exceeds 100 degrees.,,,,
+   **CSV Entry**: boil the hell out of it..., hell, Hell refers to a place of suffering and a state also used in exclamatory sense., Many people believe that hell is a place of eternal punishment after death., The temperature in summer can feel like hell on Earth when it exceeds 100 degrees.
+2. **Joke**: How do you make holy water? boil the hell out of it...,,,,
+   - **Word**: boil,,,,
+   - **Explanation**: Boil refers to heating a liquid until it bubbles and boil can also refer to being in an intense emotional state.,,,,
+   - **New Sentences**:,,,,
+     - **First new sentence**: You need to boil the water before adding the pasta.,,,,
+     - **Second new sentence**: He started to boil with rage when he heard the unfair decision.,,,,
+   **CSV Entry**: boil the hell out of it..., boil, Boil refers to heating a liquid until it bubbles and it can also refer to being in an intense emotional state., You need to boil the water before adding the pasta., He started to boil with rage when he heard the unfair decision.
+3. **Joke**: What breaks when you give it to a six year old? his hips,,,,
+   - **Word**: break,,,,
+   - **Explanation**: Break means to cause to separate into pieces and can also refer to a disruption or interruption.,,,,
+   - **New Sentences**:,,,,
+"     - **First new sentence**: If you drop the glass, it will likely break into many pieces.",,,,
+     - **Second new sentence**: He needed to take a break from work to clear his mind.,,,,
+   **CSV Entry**: What breaks when you give it to a six year old? his hips, break, Break means to cause to separate into pieces and can also refer to a disruption or interruption.," If you drop the glass, it will likely break into many pieces.", He needed to take a break from work to clear his mind.
+"These are the selected jokes along with their formatted CSV entries. If you need more entries or changes, let me know!",,,,

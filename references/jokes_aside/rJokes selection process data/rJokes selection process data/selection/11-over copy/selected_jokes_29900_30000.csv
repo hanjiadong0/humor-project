@@ -1,0 +1,12 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. When you watch tv with the closed captioning on... youve got to take their word for it.,,,,
+   , word: word , explanation: The word word can mean a unit of language or a promise/agreement. , first new sentence: She was impressed by his eloquence and choice of words during the presentation. , second new sentence: He gave her his word that he would complete the project on time.
+2. What do you call a bad hairdresser who is also very expensive? a rip-off.,,,,
+   , word: rip , explanation: The word rip can mean to tear something or used informally to refer to something that is a scam. , first new sentence: Be careful not to rip the paper while wrapping the gift. , second new sentence: Many consumers feel that the prices of certain services are a rip-off.
+"3. Whats the difference between fog and mist? if you hit it, its fog"," if you dont, its mist.",,,
+   , word: mist ," explanation: The word mist can mean a fine spray or light fog, and can imply to obscure someones understanding or vision. ", first new sentence: The morning mist over the lake created a beautiful scenic view. , second new sentence: He realized he was living in a mist of confusion about his career path.
+4. What do you call a nun in space? virgin galactic,,,,
+   , word: virgin , explanation: The word virgin can mean someone who has not engaged in sexual activity and is also a term related to the Virgin Galactic spaceflight company. ," first new sentence: She chose to remain a virgin until marriage, believing it was the right decision. ", second new sentence: Virgin Galactic aims to provide commercial space travel to the public.
+5. What do you call a fake noodle? an impasta!!!!,,,,
+   , word: impasta ," explanation: The word pasta refers to a type of food made from flour and water, while impasta is a play on words referring to something that is fake. "," first new sentence: I ordered spaghetti, which is a type of pasta made with wheat. "," second new sentence: The magicians act was impressive, but the pulled rabbit was definitely an impasta."
+The resulting CSV structure follows your requested format and is separated by semicolons.,,,,

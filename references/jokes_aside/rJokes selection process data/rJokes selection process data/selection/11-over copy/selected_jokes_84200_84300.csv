@@ -1,0 +1,17 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. **Joke:** How does a barnacle like its martinis? On the rocks.,,,,
+   - **Word:** rocks,,,,
+"   - **Explanation:** In the context of the joke, rocks refers to ice cubes in a drink (first meaning) and to actual stones or boulders (second meaning).",,,,
+   - **CSV Format Output:**,,,,
+     How does a barnacle like its martinis? On the rocks., rocks," In the context of the joke, rocks refers to ice cubes in a drink (first meaning) and to actual stones or boulders (second meaning).", A rocky coastline provides habitat for various marine organisms including barnacles., The bartender served the martini chilled with some rocks floating on top.
+2. **Joke:** How does a bass player turn off the lights before bed? He closes the car door.,,,,
+   - **Word:** bass,,,,
+   - **Explanation:** Bass refers to the musical instrument (first meaning) and a type of fish (second meaning).,,,,
+   - **CSV Format Output:**,,,,
+     How does a bass player turn off the lights before bed? He closes the car door., bass, Bass refers to the musical instrument (first meaning) and a type of fish (second meaning)., The bassist played a beautiful melody during the concert., The fisherman caught a large bass in the lake yesterday.
+3. **Joke:** What did the match box say to the match? Youre fired!,,,,
+   - **Word:** fired,,,,
+   - **Explanation:** Fired refers to being dismissed from a job (first meaning) and the act of being lit (as in a match being ignited) (second meaning).,,,,
+   - **CSV Format Output:**,,,,
+     What did the match box say to the match? Youre fired!, fired, Fired refers to being dismissed from a job (first meaning) and the act of being lit (as in a match being ignited) (second meaning)., He was fired from his job after the incident., The match was quickly fired after being struck against the box.
+"These entries fit the criteria of single words with dual meanings present in the context of the jokes, and Ive provided the required serious sentences as requested.",,,,

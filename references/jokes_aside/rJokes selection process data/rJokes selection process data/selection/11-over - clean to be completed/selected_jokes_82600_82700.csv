@@ -1,0 +1,17 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. Did you hear about the miners new album? i really dig it  ,,,,
+   dig, to excavate or to appreciate, I need to dig a hole for the new plant," I really dig this song, its amazing.",
+2. What did the tear testify in court? because he was an eye wetness.  ,,,,
+   wet, having moisture or rainy, The ground is wet after the rain, The wet paint cannot be touched yet.,
+3. What did one boob say to the other? youre my breast friend.  ,,,,
+   breast, part of the body or pertaining to something that is the best, She is thinking about getting a breast augmentation, That was a breast dinner Ive ever had.,
+"4. What did the hippie say about all of the math problems? theyre all, like, equal to me...  ",,,,
+   equal, the same in quantity or status, We need to ensure that all individuals are treated as equal, The two scores are equal on the test.,
+5. Why does moon rock taste better than earth rock? its a little meteor.  ,,,,
+   meteor, a small body of matter from outer space or a person who is very popular, A meteor streaked across the night sky, The scientist is a meteor in the field of astrophysics.,
+Here is the formatted output:,,,,
+Did you hear about the miners new album? i really dig it, dig, to excavate or to appreciate, I need to dig a hole for the new plant," I really dig this song, its amazing."
+What did the tear testify in court? because he was an eye wetness., wet, having moisture or rainy, The ground is wet after the rain, The wet paint cannot be touched yet.
+What did one boob say to the other? youre my breast friend., breast, part of the body or pertaining to something that is the best, She is thinking about getting a breast augmentation, That was a breast dinner Ive ever had.
+"What did the hippie say about all of the math problems? theyre all, like, equal to me...", equal, the same in quantity or status, We need to ensure that all individuals are treated as equal, The two scores are equal on the test.
+Why does moon rock taste better than earth rock? its a little meteor., meteor, a small body of matter from outer space or a person who is very popular, A meteor streaked across the night sky, The scientist is a meteor in the field of astrophysics.

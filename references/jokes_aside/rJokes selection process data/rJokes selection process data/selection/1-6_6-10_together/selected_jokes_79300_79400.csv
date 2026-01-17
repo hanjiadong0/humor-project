@@ -1,0 +1,7 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. **Joke:** A magician was driving down the street and turned into a driveway  ,,,,
+   **CSV Format:** A magician was driving down the street and turned into a driveway, turn, Explanation: Turn can mean to change direction while driving or to change into something, She expertly took a turn at the intersection. ," As the sun began to set, the mood in the room took a turn for the better."
+2. **Joke:** Did you hear about the buffalo say before sending his son off to college? bison  ,,,,
+   **CSV Format:** Did you hear about the buffalo say before sending his son off to college? bison, bison," Explanation: Bison refers to the animal itself, while it sounds like bye, son", The bison grazed peacefully in the open field. , The father gave his son a heartfelt goodbye as he left for college.
+3. **Joke:** Did you hear the inventor of cough lollies died last week? therell be no coughin at his funeral  ,,,,
+   **CSV Format:** Did you hear the inventor of cough lollies died last week? therell be no coughin at his funeral, cough, Explanation: Cough refers to the act of expelling air from the lungs and also as a term used for a cough drop, She had a persistent cough that wouldnt go away. , The doctor advised him to cough deeply to check his lungs.

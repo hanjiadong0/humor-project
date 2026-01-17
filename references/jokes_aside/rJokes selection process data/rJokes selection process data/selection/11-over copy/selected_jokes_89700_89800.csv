@@ -1,0 +1,32 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. **Joke**: Why does michael j fox make the best milkshakes? he uses only the finest ingredients.,,,,
+   - **Word**: fine,,,,
+   - **Explanation**: The word fine refers both to quality (excellent) and to a monetary charge (penalty).,,,,
+   - **First New Sentence**: The jeweler determined the fine of the diamond to be exceptionally high.,,,,
+   - **Second New Sentence**: The court imposed a fine on the company for breaking environmental laws.,,,,
+2. **Joke**: How can you tell if a tornado is stupid? - if it spins anti-cyclonically.,,,,
+   - **Word**: spin,,,,
+   - **Explanation**: Spin refers to rotation and to a deliberate attempt at presenting information in a biased manner.,,,,
+   - **First New Sentence**: The children watched the top spin for hours in amazement.,,,,
+   - **Second New Sentence**: The politician tried to spin the story to make himself look better.,,,,
+3. **Joke**: What do you call someone who takes things literally? a kleptomaniac!,,,,
+   - **Word**: take,,,,
+   - **Explanation**: Take can mean to grasp or acquire (physically) and to interpret (mentally).,,,,
+   - **First New Sentence**: Make sure to take your umbrella if it looks like rain.,,,,
+   - **Second New Sentence**: I try to take all suggestions into consideration when making decisions.,,,,
+4. **Joke**: I cant stop making figurines of frodo its hobbit forming.,,,,
+   - **Word**: hobbit,,,,
+   - **Explanation**: “Hobbit” refers to the fictional character from Tolkiens works and to the idea of habit (a recurring behavior).,,,,
+   - **First New Sentence**: The hobbit lived in a cozy little home in the Shire.,,,,
+   - **Second New Sentence**: Developing a reading habit is essential for lifelong learning.,,,,
+5. **Joke**: How do you tell two witches apart? you cant! you dont know which witch is which!,,,,
+   - **Word**: witch,,,,
+   - **Explanation**: Witch refers to a person (often a woman) with magical powers or practices and can also refer to someone who is perceived negatively.,,,,
+"   - **First New Sentence**: In many cultures, a witch is seen as a figure of lore and magic.",,,,
+   - **Second New Sentence**: She has a reputation as a witch for her sharp tongue and fierce demeanor.,,,,
+Here is the CSV format for the selected jokes:,,,,
+Why does michael j fox make the best milkshakes? he uses only the finest ingredients.,fine,The word fine refers both to quality (excellent) and to a monetary charge (penalty).,The jeweler determined the fine of the diamond to be exceptionally high.,The court imposed a fine on the company for breaking environmental laws.
+How can you tell if a tornado is stupid? - if it spins anti-cyclonically.,spin,Spin refers to rotation and to a deliberate attempt at presenting information in a biased manner.,The children watched the top spin for hours in amazement.,The politician tried to spin the story to make himself look better.
+What do you call someone who takes things literally? a kleptomaniac!,take,Take can mean to grasp or acquire (physically) and to interpret (mentally).,Make sure to take your umbrella if it looks like rain.,I try to take all suggestions into consideration when making decisions.
+I cant stop making figurines of frodo its hobbit forming.,hobbit,Hobbit refers to the fictional character from Tolkiens works and to the idea of habit (a recurring behavior).,The hobbit lived in a cozy little home in the Shire.,Developing a reading habit is essential for lifelong learning.
+How do you tell two witches apart? you cant! you dont know which witch is which!,witch,Witch refers to a person (often a woman) with magical powers or practices and can also refer to someone who is perceived negatively.,"In many cultures, a witch is seen as a figure of lore and magic.",She has a reputation as a witch for her sharp tongue and fierce demeanor.

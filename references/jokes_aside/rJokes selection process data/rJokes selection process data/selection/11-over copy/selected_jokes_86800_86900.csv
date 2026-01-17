@@ -1,0 +1,20 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. **Joke:** What do you get if you drop a piano on an army base? a flat major.,,,,
+   - **Word:** Major,,,,
+   - **Explanation:** Major can refer to a rank in the army and a musical key.,,,,
+   - **First New Sentence:** The major in charge of the battalion received commendations for his leadership.,,,,
+"   - **Second New Sentence:** The piece is performed in the key of E major, which is often bright and uplifting.",,,,
+"2. **Joke:** Whats so good about being swiss? well, the flag is a big plus.",,,,
+   - **Word:** Plus,,,,
+   - **Explanation:** Plus can refer to a mathematical addition or a positive attribute.,,,,
+"   - **First New Sentence:** In mathematics, two plus two equals four.",,,,
+   - **Second New Sentence:** Her experience in the industry is a plus when applying for the job.,,,,
+3. **Joke:** What do you call a child molesting know-it-all? a wikipediaphile.,,,,
+   - **Word:** File,,,,
+   - **Explanation:** File can refer to a document or folder and the act of filing something away.,,,,
+   - **First New Sentence:** The accountant organized the file of tax documents to prepare for the audit.,,,,
+   - **Second New Sentence:** Please file your application by the end of the month to be considered.,,,,
+Heres the CSV format for the selected jokes:,,,,
+what do you get if you drop a piano on an army base? a flat major.,major,major can refer to a rank in the army and a musical key.,The major in charge of the battalion received commendations for his leadership.,"The piece is performed in the key of E major, which is often bright and uplifting."
+"whats so good about being swiss? well, the flag is a big plus.",plus,plus can refer to a mathematical addition or a positive attribute.,"In mathematics, two plus two equals four.",Her experience in the industry is a plus when applying for the job.
+what do you call a child molesting know-it-all? a wikipediaphile.,file,file can refer to a document or folder and the act of filing something away.,The accountant organized the file of tax documents to prepare for the audit.,Please file your application by the end of the month to be considered.

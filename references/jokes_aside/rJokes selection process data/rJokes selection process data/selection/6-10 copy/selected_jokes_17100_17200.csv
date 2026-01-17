@@ -1,0 +1,8 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. **Joke:** Why do seagulls fly over the sea? because if they flew over the bay they would be bagels.,,,,
+   - **CSV Format:**,,,,
+   Why do seagulls fly over the sea? because if they flew over the bay they would be bagels., bagel," A bagel is a type of bread product, usually in a ring shape.", I ordered a bagel with cream cheese for breakfast this morning., The bagel was fresh and warm from the oven.
+2. **Joke:** What do little pigs want to be when they grow up? garbage collectors.,,,,
+   - **CSV Format:**,,,,
+   What do little pigs want to be when they grow up? garbage collectors., garbage, Waste material that is discarded., The garbage bin was overflowing with yesterdays trash., They decided to take out the garbage early this morning.
+"You can copy and paste the above CSV lines into a CSV file. Each line represents the structure you requested, with the joke, word, explanation, and two new serious sentences based on the dual meanings of the word.",,,,

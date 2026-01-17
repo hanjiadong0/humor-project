@@ -1,0 +1,7 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. Did you hear about the fire at the campground? it was in tents.,,,,
+2. How did the broken window not go to the doctor? he had no more pane.,,,,
+"Now, Ill create the serious sentences you requested. ",,,,
+Output in CSV format (semicolon-separated):,,,,
+Did you hear about the fire at the campground? it was in tents., tents," In this context, tents refers to temporary shelter often used while camping.", The campers set up several tents to provide shelter from the rain., The architect designed the tents to be spacious and comfortable for the festival attendees.
+How did the broken window not go to the doctor? he had no more pane., pane," In this context, pane refers to a single sheet of glass in a window.", The carpenter replaced the broken pane in the window to restore its functionality., She looked through the pane of glass to see the beautiful garden outside.

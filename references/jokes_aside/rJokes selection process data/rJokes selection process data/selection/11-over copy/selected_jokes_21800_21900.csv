@@ -1,0 +1,32 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. **Joke**: What did the umpire say when randy johnson hit a bird with his pitch? fowl ball.  ,,,,
+   - **Word**: fowl  ,,,,
+   - **Explanation**: Fowl can mean both a type of bird and can be used to describe something unpleasant or bad (like foul).  ,,,,
+   - **First new sentence**: The farmer raised several species of fowl on his property.  ,,,,
+   - **Second new sentence**: The conduct during the game was deemed fowl by the spectators.  ,,,,
+2. **Joke**: Whats the difference between jelly and jam? i cant jelly my dick into a girls ass.  ,,,,
+   - **Word**: jam  ,,,,
+   - **Explanation**: Jam can refer to a fruit spread and also to a situation where something is stuck or packed in tightly.  ,,,,
+   - **First new sentence**: I spread some jam on my toast for breakfast.  ,,,,
+   - **Second new sentence**: The traffic jam caused us to arrive late to the concert.  ,,,,
+3. **Joke**: Whats the difference between a jew and a pizza? the pizza doesnt scream in the oven sorry  ,,,,
+   - **Word**: pizza  ,,,,
+"   - **Explanation**: While pizza typically refers to the food item, the joke plays off the idea of it being a living entity based on the jokes context, which is inappropriate and offensive.  ",,,,
+   - **First new sentence**: I ordered a pepperoni pizza for dinner last night.  ,,,,
+   - **Second new sentence**: The chef skillfully tossed the pizza dough into the air.  ,,,,
+4. **Joke**: What do you call a metalhead with a cold? flemmy  ,,,,
+   - **Word**: flemmy  ,,,,
+"   - **Explanation**: Flemmy describes something related to phlegm, often used in a gross or humorous context, but phlegm itself can refer to a bodily fluid.  ",,,,
+   - **First new sentence**: He felt quite flemmy after catching that cold.  ,,,,
+   - **Second new sentence**: The presence of phlegm often indicates an underlying infection.  ,,,,
+"5. **Joke**: What do you call a black man flying a plane? the pilot, you racist!  ",,,,
+   - **Word**: pilot  ,,,,
+"   - **Explanation**: Pilot can mean a person operating an aircraft, but in other contexts, it can refer to an introductory episode or project (as in television).  ",,,,
+   - **First new sentence**: The experienced pilot flew the aircraft through rough weather.  ,,,,
+   - **Second new sentence**: The pilot episode of the show garnered much attention from the audience.  ,,,,
+Here is the CSV formatted output:,,,,
+fowl, fowl, Fowl can mean both a type of bird and can be used to describe something unpleasant or bad., The farmer raised several species of fowl on his property., The conduct during the game was deemed fowl by the spectators.
+jam, jam, Jam can refer to a fruit spread and also to a situation where something is stuck or packed in tightly., I spread some jam on my toast for breakfast., The traffic jam caused us to arrive late to the concert.
+pizza, pizza," While pizza typically refers to the food item, the joke plays off the idea of it being a living entity based on the jokes context, which is inappropriate and offensive.", I ordered a pepperoni pizza for dinner last night., The chef skillfully tossed the pizza dough into the air.
+flemmy, flemmy," Flemmy describes something related to phlegm, often used in a gross or humorous context, but phlegm itself can refer to a bodily fluid.", He felt quite flemmy after catching that cold., The presence of phlegm often indicates an underlying infection.
+pilot, pilot," Pilot can mean a person operating an aircraft, but in other contexts, it can refer to an introductory episode or project (as in television).", The experienced pilot flew the aircraft through rough weather., The pilot episode of the show garnered much attention from the audience.

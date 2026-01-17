@@ -1,0 +1,10 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. **Joke**: Why cant irishmen be lawyers? they can never get past the bar.,,,,
+2. **Joke**: How do you tell if water is true or false? bring it to a bool.,,,,
+3. **Joke**: What do you call two gay irishmen? gerald fitzpatrick and patrick fitzgerald.,,,,
+4. **Joke**: The chickens egg never hatched... it was a bad yoke.,,,,
+I will now format the results appropriately for a CSV file. ,,,,
+Why cant irishmen be lawyers? they can never get past the bar, bar, A bar is a place where people go to drink., The lawyer failed to get past the qualification bar exam., The upcoming bar exam will determine the lawyers future.
+How do you tell if water is true or false? bring it to a bool, bool," Bool is a data type in programming, representing true/false.", The program used a boolean to determine the output.," In logic, a Boolean value can only be true or false."
+The chickens egg never hatched... it was a bad yoke, yoke, The yoke of an egg is the yellow part., The yoke of the cart was broken and needed repair.,
+"This output is designed to be easily imported into a CSV file, following your required format.",,,,

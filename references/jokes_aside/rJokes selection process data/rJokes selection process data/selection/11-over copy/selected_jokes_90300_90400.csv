@@ -1,0 +1,21 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. **Joke:** What do you call it when an inmate takes a picture of their-self? a cellfie,,,,
+   - **Word:** cell,,,,
+"   - **Explanation:** In the context of the joke, cell refers to both a prison cell and a small unit of biological life (cell).",,,,
+"   - **First new sentence:** The prisoner spent his days locked in a small cell, counting the days until his release.",,,,
+"   - **Second new sentence:** Under a microscope, the scientist observed the structure and function of the cell.",,,,
+2. **Joke:** Whats the difference between a snow-man and a snow-woman? snowballs,,,,
+   - **Word:** balls,,,,
+"   - **Explanation:** Here, balls refers to both the physical snowballs that are used to make a snowman and a colloquial term for testicles.",,,,
+   - **First new sentence:** The children laughed as they threw snowballs at each other during the winter storm.,,,,
+"   - **Second new sentence:** During the annual health check, the doctor discussed the importance of mens health concerning their balls.",,,,
+3. **Joke:** What did the father buffalo say to his son going off to college? bison,,,,
+   - **Word:** bison,,,,
+"   - **Explanation:** In the joke, bison contains a play on words where the word refers to both the animal and the goodbyes offered to a son as he leaves for college.",,,,
+"   - **First new sentence:** The bison roamed freely across the plains, a majestic sight under the blue sky.",,,,
+   - **Second new sentence:** The fathers bison was filled with pride as he sent his son off to pursue higher education.,,,,
+"In CSV format for a file, each line would look like this:",,,,
+What do you call it when an inmate takes a picture of their-self? a cellfie, cell," In the context of the joke, cell refers to both a prison cell and a small unit of biological life (cell)."," The prisoner spent his days locked in a small cell, counting the days until his release."," Under a microscope, the scientist observed the structure and function of the cell."
+Whats the difference between a snow-man and a snow-woman? snowballs, balls," Here, balls refers to both the physical snowballs that are used to make a snowman and a colloquial term for testicles.", The children laughed as they threw snowballs at each other during the winter storm.," During the annual health check, the doctor discussed the importance of mens health concerning their balls."
+What did the father buffalo say to his son going off to college? bison, bison," In the joke, bison contains a play on words where the word refers to both the animal and the goodbyes offered to a son as he leaves for college."," The bison roamed freely across the plains, a majestic sight under the blue sky.", The fathers bison was filled with pride as he sent his son off to pursue higher education.
+Feel free to copy this format to create your CSV file!,,,,

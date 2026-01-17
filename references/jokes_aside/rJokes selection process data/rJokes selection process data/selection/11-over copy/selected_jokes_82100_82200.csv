@@ -1,0 +1,26 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. **Sentence**: What do you call a matador who lost to the bull? a matogore.,,,,
+   - **Word**: matador,,,,
+"   - **Explanation**: A matador is a bullfighter, and the pun plays on the word gore, which can mean both bloodshed from a bullfight and a play on matador as someone in a losing situation (thus matogore).",,,,
+"   - **First new sentence**: The matador bravely faced the bull in the ring, showcasing his skill and courage.",,,,
+   - **Second new sentence**: The story of the defeated matador became a tale of tragedy that was filled with emotional gore.,,,,
+"2. **Sentence**: I told a joke to my chemistry teacher. he replied oh man, i slapped my neon that one.",,,,
+   - **Word**: neon,,,,
+"   - **Explanation**: Neon is a chemical element (noble gas), and the wordplay lies in slapping as a reaction to a joke, implying something bright or light-hearted.",,,,
+"   - **First new sentence**: The neon sign lit up brilliantly, casting colorful reflections across the street.",,,,
+"   - **Second new sentence**: The neon lights pulsated with energy, creating an atmosphere of excitement in the club.",,,,
+3. **Sentence**: What do nails like to do on the weekend? get hammered.,,,,
+   - **Word**: hammered,,,,
+"   - **Explanation**: To get hammered can mean to drink alcohol excessively, but also refers to hammering nails into wood.",,,,
+   - **First new sentence**: The carpenter hammered the nails into the wooden frame securely.,,,,
+"   - **Second new sentence**: After a long week, he decided to get hammered at the bar with friends to unwind.",,,,
+4. **Sentence**: Did the deer have any doe? he had 2 bucks.,,,,
+   - **Word**: bucks,,,,
+"   - **Explanation**: Bucks refer to male deer, but also colloquially means money.",,,,
+"   - **First new sentence**: The bucks leaped gracefully through the forest, showcasing their agility.",,,,
+"   - **Second new sentence**: After saving diligently, he had finally accumulated enough bucks to buy a new car.",,,,
+Now lets format this to fit a CSV file separated by semicolons:,,,,
+What do you call a matador who lost to the bull? a matogore.,matador,"A matador is a bullfighter, and the pun plays on the word gore. ","The matador bravely faced the bull in the ring, showcasing his skill and courage.",The story of the defeated matador became a tale of tragedy that was filled with emotional gore.
+"I told a joke to my chemistry teacher. he replied oh man, i slapped my neon that one.",neon,Neon is a chemical element and represents brightness.,"The neon sign lit up brilliantly, casting colorful reflections across the street.","The neon lights pulsated with energy, creating an atmosphere of excitement in the club."
+What do nails like to do on the weekend? get hammered.,hammered,To get hammered refers to drinking alcohol or hammering nails into wood.,The carpenter hammered the nails into the wooden frame securely.,"After a long week, he decided to get hammered at the bar with friends to unwind."
+Did the deer have any doe? he had 2 bucks.,bucks,Bucks refer to male deer as well as colloquially meaning money.,"The bucks leaped gracefully through the forest, showcasing their agility.","After saving diligently, he had finally accumulated enough bucks to buy a new car."

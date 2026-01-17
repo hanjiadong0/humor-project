@@ -1,0 +1,11 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. **Joke:** Whats the difference between roast chicken and pea soup? i can roast chicken but i cant pea soup,,,,
+   - **Word:** pea,,,,
+"   - **Explanation:** In the context of the joke, pea refers to the food item, while it also sounds like pee, which is urine.",,,,
+2. **Joke:** Why did the bike fall over? it was too tired,,,,
+   - **Word:** tired,,,,
+"   - **Explanation:** Here, tired means exhausted in one interpretation, while in a different context, it refers to a bicycle tire.",,,,
+Here are the formatted results as requested:,,,,
+Whats the difference between roast chicken and pea soup? i can roast chicken but i cant pea soup,pea,"In the context of the joke, pea refers to the food item, while it also sounds like pee, which is urine.",Green peas are a common ingredient in many healthy dishes.,I had to leave the bathroom because I couldnt hold my pee any longer.
+Why did the bike fall over? it was too tired,tired,"In one interpretation, tired means exhausted, while in another context, it refers to a bicycle tire.","After a long day at work, I felt extremely tired.","The bikes tires were flat, so it could not be ridden."
+(Note: Each sentence in the results is encapsulated in double quotes to handle CSV formatting correctly.),,,,

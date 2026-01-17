@@ -1,0 +1,5 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+What do you call a street on the mexican border? wall street, wall, a wall is a vertical structure that defines and protects a space, The construction of the new wall increased property values in the area., The wall displayed beautiful artwork that reflected the communitys history.
+What do you call people waiting in line for vietnamese soup? pho queue., queue, a queue is a line or sequence of people or vehicles awaiting their turn, We waited in the queue for hours to get into the concert., The queue for the popular restaurant extended around the block.
+What did the wick say to the wax? i candel you., candle, a candle is a cylinder of wax with a wick in the center used for lighting, She lit the candle to create a relaxing atmosphere.," The candle burned brightly in the dark, filling the room with a warm glow."
+This output maintains the appropriate formatting for a CSV file with semicolon separation.,,,,

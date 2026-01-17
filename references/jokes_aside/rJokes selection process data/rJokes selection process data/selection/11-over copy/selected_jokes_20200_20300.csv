@@ -1,0 +1,27 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. **Joke:** What do you call a bad mexican restaurant? shitpotle  ,,,,
+   **Word:** pot  ,,,,
+"   **Explanation:** The word pot can mean a cooking vessel, while it can also refer to marijuana (slang).  ",,,,
+   **First New Sentence:** The chef used a large pot to prepare the soup.  ,,,,
+"   **Second New Sentence:** After a long week, he decided to unwind with a pot on the weekend.",,,,
+2. **Joke:** How do you define a will? hint: its a dead giveaway.  ,,,,
+   **Word:** giveaway  ,,,,
+   **Explanation:** The word giveaway can mean a promotional item given for free or can refer to the act of unintentionally revealing a secret or information.  ,,,,
+   **First New Sentence:** The store had a huge giveaway event for customers during the holidays.  ,,,,
+   **Second New Sentence:** His expression was a major giveaway that he was hiding something.,,,,
+3. **Joke:** What kind of appointment is always at the wrong time? dis appointment  ,,,,
+   **Word:** appointment  ,,,,
+   **Explanation:** Appointment can refer to a scheduled meeting or it can mean a position or role assigned to someone.  ,,,,
+   **First New Sentence:** I have a doctors appointment tomorrow at noon.  ,,,,
+   **Second New Sentence:** His appointment as the new director will take effect next month.,,,,
+4. **Joke:** How does han solo like to get around endor? ewoks  ,,,,
+   **Word:** walk  ,,,,
+"   **Explanation:** Walk can mean to move by putting one foot in front of the other, while it can also refer to the act of walking in a casual way, often used in the phrase to walk someone.  ",,,,
+   **First New Sentence:** She decided to walk to the store instead of driving.  ,,,,
+   **Second New Sentence:** He promised to walk her to her car after the event.,,,,
+The CSV formatted output would look like this:,,,,
+What do you call a bad mexican restaurant? shitpotle,pot,"The word pot can mean a cooking vessel, while it can also refer to marijuana (slang).",The chef used a large pot to prepare the soup.,"After a long week, he decided to unwind with a pot on the weekend."
+How do you define a will? hint: its a dead giveaway.,giveaway,The word giveaway can mean a promotional item given for free or can refer to the act of unintentionally revealing a secret or information.,The store had a huge giveaway event for customers during the holidays.,His expression was a major giveaway that he was hiding something.
+What kind of appointment is always at the wrong time? dis appointment,appointment,The word appointment can refer to a scheduled meeting or it can mean a position or role assigned to someone.,I have a doctors appointment tomorrow at noon.,His appointment as the new director will take effect next month.
+How does han solo like to get around endor? ewoks,walk," Walk can mean to move by putting one foot in front of the other, while it can also refer to the act of walking in a casual way, often used in the phrase to walk someone. ",She decided to walk to the store instead of driving.,He promised to walk her to her car after the event.
+"(Note: Currently, there may not be traditional jokes that meet the exact criteria you have provided. This response identifies similar structures based on what is available.)",,,,

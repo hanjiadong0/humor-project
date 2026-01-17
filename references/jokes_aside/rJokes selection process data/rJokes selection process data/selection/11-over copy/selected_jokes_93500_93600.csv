@@ -1,0 +1,20 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+1. **Joke:** What did the baby say to its mother after breastfeeding? thanks for the mammaries!  ,,,,
+   **Word:** mammaries  ,,,,
+"   **Explanation:** The word mammaries refers to the breasts which produce milk, and it can also refer to the mammals, as they are defined by having mammary glands.  ",,,,
+   **First new sentence:** Mammaries play a crucial role in the reproductive and nurturing processes of mammals.  ,,,,
+   **Second new sentence:** The scientist studied the evolutionary adaptations of mammaries across different species of mammals.,,,,
+2. **Joke:** Why did the doctor lose his job? he lost his patience.  ,,,,
+   **Word:** patience  ,,,,
+"   **Explanation:** The word patience refers to the ability to wait calmly without frustration, and it can also refer to a patient, someone receiving medical care.  ",,,,
+   **First new sentence:** The doctor emphasized the importance of patience in helping his patients recover from illness.  ,,,,
+"   **Second new sentence:** After years of practice, my uncle learned that true patience is needed in every patient who struggles with their treatment.",,,,
+3. **Joke:** What did the bull-fighter say to the upset door? whats the matador?  ,,,,
+   **Word:** matador  ,,,,
+"   **Explanation:** The word matador refers to the bullfighter in a bullfighting event, and it can also be interpreted as matador as a potential play on a door that is disturbed or upset.  ",,,,
+   **First new sentence:** The matador gracefully maneuvered around the charging bull during the traditional Spanish festival.  ,,,,
+   **Second new sentence:** The designer decided to replace the old matador with a modern-style door that captured the essence of traditional Spanish culture.,,,,
+Heres the formatted output suitable for a CSV file:,,,,
+thanks for the mammaries!, mammaries," The word mammaries refers to the breasts which produce milk, and it can also refer to the mammals, as they are defined by having mammary glands.", Mammaries play a crucial role in the reproductive and nurturing processes of mammals., The scientist studied the evolutionary adaptations of mammaries across different species of mammals.
+he lost his patience., patience," The word patience refers to the ability to wait calmly without frustration, and it can also refer to a patient, someone receiving medical care.", The doctor emphasized the importance of patience in helping his patients recover from illness.," After years of practice, my uncle learned that true patience is needed in every patient who struggles with their treatment."
+whats the matador?, matador," The word matador refers to the bullfighter in a bullfighting event, and it can also be interpreted as matador as a potential play on a door that is disturbed or upset.", The matador gracefully maneuvered around the charging bull during the traditional Spanish festival., The designer decided to replace the old matador with a modern-style door that captured the essence of traditional Spanish culture.

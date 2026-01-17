@@ -1,0 +1,5 @@
+sentence,word,explanation,first_new_sentence,second_new_sentence
+Ive had my phone battery die at a family function. nothing scares me now., battery, A battery is a device that stores energy for electrical devices.," My phones battery life has been decreasing lately, causing me to charge it more frequently.", The battery of the car needs to be replaced as it no longer holds a charge.
+Im thinking about writing a book. its a novel idea., novel, A novel is a long written work of fiction., The author has released a new novel that explores profound themes of loss and redemption., The novel concept revolved around a groundbreaking scientific theory.
+Did you hear about the mexican train killer? he had loco motives., loco, Loco translates to crazy or insane in Spanish., The train was being operated by a loco engineer who took unnecessary risks., The childrens amazing performance in the talent show was totally loco.
+"In this output, each selected joke is followed by the requested sentences with the word that has multiple meanings, arranged as specified for CSV formatting.",,,,
