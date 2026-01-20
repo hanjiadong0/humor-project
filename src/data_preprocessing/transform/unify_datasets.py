@@ -9,7 +9,7 @@ import pandas as pd
 def clean_text(s: str) -> str:
     s = str(s)
     s = s.replace("\r", " ").replace("\n", " ")
-    s = re.sub(r"\s+", " ", s).strip()
+    s = re.sub(r"\s+", " ", s).strip() 
     return s
 
 
