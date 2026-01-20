@@ -12,3 +12,7 @@ outputs/
 .DS_Store
 Thumbs.db
 .vscode/
+
+*.npy
+*.csv
+
