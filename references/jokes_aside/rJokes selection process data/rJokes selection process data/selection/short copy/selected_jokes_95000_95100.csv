@@ -1,5 +1,0 @@
-sentence,word,explanation,first_new_sentence,second_new_sentence
-Im worried i wont pass my stress test, test," In this context, test refers to an examination or evaluation", I have to take a written test for my certification next week., The doctor will conduct a stress test to check my heart health.
-What did the allergic 2x4s terrifying hallucination? he sawdust, saw," Here, saw refers to the tool used for cutting", He used a saw to cut the wood.," Yesterday, I saw a beautiful sunset."
-What is jeremy clarksons pin number? nought two sixty, two," In this context, two refers to the number", She has two dogs at home., I need to buy two tickets for the concert.
-"This output is structured to be easily parsed into a CSV file format. Each row consists of the jokes punchline, the word used, an explanation of its meanings, followed by two new serious sentences employing both meanings of the word.",,,,

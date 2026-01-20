@@ -1,9 +1,0 @@
-sentence,word,explanation,first_new_sentence,second_new_sentence
-1. Why did the pedophile go into the cave? he was looking for miners.,,,,
-2. What do you call a veal-birthing cow? de-calf.,,,,
-The transformed sentences are:,,,,
-1. Miners," Miners can refer both to workers who extract minerals from the earth and underage individuals, as in mind minors", The miners worked hard in the dark tunnels beneath the mountain.," The miners played outside, enjoying their summer vacation.",
-2. Calf, Calf can refer to a young bovine animal and the back part of the leg, The farmer has a new calf that was born last night., My calf muscles are sore after the workout yesterday.,
-Here is the result in the desired CSV format:,,,,
-Why did the pedophile go into the cave? he was looking for miners., miners, miners refers to both workers extracting minerals and underage individuals, The miners worked hard in the dark tunnels beneath the mountain.," The miners played outside, enjoying their summer vacation."
-What do you call a veal-birthing cow? de-calf., calf, calf refers to both a young bovine animal and the back part of the leg, The farmer has a new calf that was born last night., My calf muscles are sore after the workout yesterday.

@@ -1,8 +1,0 @@
-sentence,word,explanation,first_new_sentence,second_new_sentence
-1. **Joke:** Why did germany lose ww2? three reichs and youre out.,,,,
-   - **Characteristics:** The word reichs refers to different meanings related to empire (Nazi Germany) and reaches (in terms of being out/reached a limit).,,,,
-2. **Joke:** A natural log with her own show ln(degeneres).,,,,
-   - **Characteristics:** The word log refers to a record of events as well as a wooden piece.,,,,
-For the CSV format requested:,,,,
-Why did germany lose ww2? three reichs and youre out, reichs, Referring to different meanings of empires (Nazi Germany) and reaches (being out/reached a limit), The Third Reich was a term used to refer to Nazi Germanys regime. , The reaches of the mountains extended far beyond what was previously known. 
-A natural log with her own show ln(degeneres), log, Referring to a record of events and a piece of wood, The log recorded all the important events of the meeting. , They used a log to build the cabin in the woods.

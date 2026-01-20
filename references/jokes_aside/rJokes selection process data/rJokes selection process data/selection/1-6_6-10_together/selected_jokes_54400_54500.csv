@@ -1,7 +1,0 @@
-sentence,word,explanation,first_new_sentence,second_new_sentence
-1. **Joke:** What do you call a bunch of horny teenagers arguing? a *mass debate*  ,,,,
-   **CSV Output:** mass debate, mass, a large amount, A mass of people gathered together for a concert. , The scientific term relates to the relationship between mass and weight.
-2. **Joke:** What did the naughty little witch at school? she was ex-spelled.  ,,,,
-   **CSV Output:** ex-spelled, expelled, removed from a place, He was expelled from school for cheating. , The speleologist studied the unique formations inside the cave.
-3. **Joke:** What does sean connery say when he has to go number 2? ive got a shituation.  ,,,,
-   **CSV Output:** shituation, situation, a condition or state, The situation in the meeting grew tense as both sides refused to compromise. ," He was a skilled negotiator, often able to defuse a shituation."
