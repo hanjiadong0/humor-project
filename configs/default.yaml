@@ -1,0 +1,58 @@
+project:
+  seed: 42
+  output_dir: outputs/mistral_multitask
+
+data:
+  raw_dir: data/raw
+  processed_path: data/processed/unified.parquet
+  text_col_candidates: ["text", "joke", "body", "fulltext", "sentence"]
+  cls_label_candidates: ["label", "is_humor", "humor", "funny"]
+  reg_label_candidates: ["score", "rating", "humor_rating", "grade"]
+
+labels:
+  # unify targets:
+  # cls: 0/1
+  # reg: 0..5
+  reg_min: 0.0
+  reg_max: 5.0
+  # how to derive cls from reg when cls missing (optional)
+  cls_from_reg_threshold: 3.0
+  reg_quantile: 0.95
+
+model:
+  base_model: mistralai/Mistral-7B-Instruct-v0.2
+  max_length: 256
+
+lora:
+  enabled: true
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj"]
+
+train:
+  task: multitask     # multitask | cls_only | reg_only
+  num_train_epochs: 1
+  learning_rate: 2e-4
+  per_device_train_batch_size: 2
+  per_device_eval_batch_size: 2
+  gradient_accumulation_steps: 8
+  warmup_ratio: 0.03
+  weight_decay: 0.0
+  logging_steps: 20
+  eval_steps: 200
+  save_steps: 200
+  bf16: true
+  fp16: false
+
+loss:
+  cls_weight: 1.0
+  reg_weight: 1.0
+
+cv:
+  enabled: false
+  folds: 5
+
+hpo:
+  enabled: false
+  n_trials: 15
