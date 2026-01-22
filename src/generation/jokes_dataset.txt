@@ -1,0 +1,15 @@
+ID: 1
+INPUT: en_2001	-	-	Panamanian lawmakers’ Taiwan trip sparks diplomatic row with China
+PATTERN: Pun
+JOKE: China's got its knickers in a twist because of some Panamanian lawmakers' Taiwan trip? Well, I guess you could say they're having a "beef" with Panama – but hopefully it doesn't get "stir-fried" into a full-blown crisis!
+============================================================
+ID: 2
+INPUT: en_2002	-	-	Carra: Liverpool must sign in January - even after summer spending spree
+PATTERN: Absurd humor
+JOKE: "Why did Liverpool sign a talking eggplant in January? Because even after their summer spending spree, they realized that the only thing that could score more goals than their new defenders was an Italian's emotional attachment to pasta."
+============================================================
+ID: 3
+INPUT: en_2003	-	-	Experts warn of health threat posed by ultra-processed foods
+PATTERN: Mini funny story
+JOKE: So, I went to the doctor and said, "I've been eating a lot of ultra-processed foods lately." He looked at me and said, "Well, you're basically a walking laboratory experiment... for gaining weight and lowering your IQ!"
+============================================================
