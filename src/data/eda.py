@@ -1,5 +1,5 @@
 import pandas as pd
-from src.utils import load_config
+from common.utils import load_config
 import matplotlib.pyplot as plt
 
 def main(config_path="configs/default.yaml"):
