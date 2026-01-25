@@ -7,7 +7,7 @@ from peft import PeftModel
 from sklearn.metrics import accuracy_score, mean_squared_error
 from scipy.stats import pearsonr
 
-from src.modeling.multitask_mistral import MistralForHumorMultiTask
+from src.humor_classifier.multitask_mistral import MistralForHumorMultiTask
 
 @torch.no_grad()
 def main(model_dir="outputs/mistral_multitask", data_path="data/processed/unified.parquet"):

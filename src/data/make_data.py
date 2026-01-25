@@ -7,7 +7,7 @@ from typing import Optional, Iterable
 import numpy as np
 import pandas as pd
 
-from src.utils.utils import load_config
+from src.common.utils import load_config
 
 
 SUPPORTED_SUFFIXES = {".csv", ".json", ".jsonl", ".parquet"}

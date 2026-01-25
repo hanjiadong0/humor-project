@@ -31,20 +31,24 @@ lora:
   target_modules: ["q_proj", "k_proj", "v_proj", "o_proj"]
 
 train:
-  task: multitask     # multitask | cls_only | reg_only
+  task: multitask
   num_train_epochs: 1
-  learning_rate: 2e-4
-  per_device_train_batch_size: 2
-  per_device_eval_batch_size: 2
-  gradient_accumulation_steps: 8
+
+  learning_rate: 0.0002      # <- statt 2e-4 (verhindert String-Missverständnisse)
+  per_device_train_batch_size: 1
+  per_device_eval_batch_size: 1
+  gradient_accumulation_steps: 16   # effektiv Batch=16, stabil & effizient
+
   warmup_ratio: 0.03
   weight_decay: 0.0
-  logging_steps: 20
-  eval_steps: 200
-  save_steps: 200
-  bf16: true
-  fp16: false
 
+  logging_steps: 10          # nicht 1 (1 ist zu spammy und bremst)
+  eval_steps: 999999999      # praktisch "nie" (aber int!)
+  save_steps: 999999999      # praktisch "nie" (aber int!)
+
+  bf16: false                # Windows + bf16 kann zicken
+  fp16: true                 # fp16 ist meist stabiler unter Windows
+  
 loss:
   cls_weight: 1.0
   reg_weight: 1.0

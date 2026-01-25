@@ -14,7 +14,13 @@ class MistralForHumorMultiTask(MistralPreTrainedModel):
         self.dropout = nn.Dropout(getattr(config, "classifier_dropout", 0.1))
         self.post_init()
 
-    def forward(self, input_ids=None, attention_mask=None, labels_cls=None, labels_reg=None):
+    def forward(self, input_ids=None, attention_mask=None, inputs_embeds=None, **kwargs):
+        out = self.model(
+            input_ids=input_ids if inputs_embeds is None else None,
+            inputs_embeds=inputs_embeds,
+            attention_mask=attention_mask,
+            **kwargs,
+        )
         out = self.model(input_ids=input_ids, attention_mask=attention_mask)
         # pooled = last token hidden state (common for decoder-only classification)
         last_hidden = out.last_hidden_state  # [B, T, H]
