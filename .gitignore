@@ -1,18 +1,26 @@
-# Python / venv
-.venv/
+# --- Secrets (never commit) ---
+.env
+.env.*
+secrets.*
+*.key
+*.pem
+
+# --- Python ---
 __pycache__/
 *.pyc
+.venv/
 
-# Data and outputs (usually not committed)
+# --- Editor / OS ---
+.vscode/
+.DS_Store
+Thumbs.db
+
+# --- Large data / outputs (customize) ---
 data/raw/
 data/processed/
 outputs/
-
-# OS / editor
-.DS_Store
-Thumbs.db
-.vscode/
-
 *.npy
-*.csv
+
+
+
 
