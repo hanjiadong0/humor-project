@@ -89,7 +89,7 @@ if __name__ == "__main__":
             "Panamanian lawmakers’ trip to Taiwan is a diplomatic faux pas. Looks like they got lost in translation – and also on the map of Asia!",
             "Panamanian lawmakers' diplomatic faux pas with China's flags are a real nail-biter. It seems their trip was just a 'draft' to stir up trouble.",
             "Panamanian lawmakers’ Taiwan trip sparks diplomatic row with China, It seems like they wanted to \"draft\" a new path in diplomacy.",
-            "Panamanian lawmakers' diplomatic trip to Taiwan was a charged affair, but I guess you could say it was a real 'draft' for world peace. After all, who needs a peaceful resolution when you can have a few extra stamps on your passport?"
+            "Panamanian lawmakers' diplomatic trip to Taiwan was a charged affair, but I guess you could say it was a real 'draft' for world peace. After all, who needs a peaceful resolution when you can have a few extra stamps on your passport?",
             "China's got a diplomatic 'draft' to pull out of this situation."
         ]
 
