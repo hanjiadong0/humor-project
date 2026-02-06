@@ -1,0 +1,3 @@
+[submodule "src/data/data-analysis"]
+	path = src/data/data-analysis
+	url = https://github.com/lmnst/data-analysis.git
