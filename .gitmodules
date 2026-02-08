@@ -1,3 +1,6 @@
 [submodule "src/data/data-analysis"]
 	path = src/data/data-analysis
 	url = https://github.com/lmnst/data-analysis.git
+[submodule "external/mistral-fine-tuning"]
+	path = external/mistral-fine-tuning
+	url = https://github.com/aastroza/mistral-fine-tuning.git
