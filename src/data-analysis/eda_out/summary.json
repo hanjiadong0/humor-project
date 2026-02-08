@@ -1,0 +1,18 @@
+{
+  "n_total": 8000,
+  "n_valid": 4932,
+  "empty_rate": 0.0,
+  "missing_any_label_rate": 0.3835,
+  "dup_exact_rate": 0.0,
+  "too_short_rate": 0.00075,
+  "ctrl_char_rate": 0.0,
+  "humor_min": 0.1,
+  "humor_max": 4.0,
+  "humor_mean": 2.2605251419302514,
+  "humor_std": 0.566973939757289,
+  "corr_humor_toklen": 0.09245325933262574,
+  "corr_humor_offense": -0.3085288064316351,
+  "corr_humor_controversy": 0.17365004960382324,
+  "high_humor_low_offense_count": 2,
+  "high_humor_low_offense_rate": 0.00040551500405515005
+}
