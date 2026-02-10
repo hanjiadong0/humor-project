@@ -8,7 +8,10 @@
       "Bash(initexmf:*)",
       "Bash(chktex:*)",
       "Bash(miktex:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(ls:*)",
+      "Bash(git ls-tree:*)",
+      "Bash(git mv:*)"
     ]
   }
 }
