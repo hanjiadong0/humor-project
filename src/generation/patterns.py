@@ -23,7 +23,7 @@ JOKE_PATTERNS = [
     "Understatement (tiny reaction to huge thing)",
     "Rule of Three (pattern → pattern → twist)",
     "Literalism (take figurative language literally)",
-    "Status Reversal (who’s ‘above’ flips)"
+    "Status Reversal (who's 'above' flips)"
 ]
 
 PATTERN_DEFINITIONS = {
@@ -257,7 +257,7 @@ PATTERN_DEFINITIONS = {
         )
     },
 
-    "Status Reversal (who’s ‘above’ flips)": {
+    "Status Reversal (who's 'above' flips)": {
         "principle": "Establish a clear hierarchy (examples:  boss/employee, teacher/student, human/pet).",
         "surprise": "Flip who has control/competence.",
         "setup_steps": [
@@ -273,6 +273,66 @@ PATTERN_DEFINITIONS = {
         "prompt_template": (
             "Set up a clear hierarchy, then flip it. "
             "Keep it short and end with the line that proves the reversal."
+        )
+    },
+
+    # -----------------
+    # Situational surprise
+    # -----------------
+    "Irony (expectation vs outcome)": {
+        "principle": "Set up a clear expectation about what should happen.",
+        "surprise": "Reveal the opposite outcome in an unexpected way.",
+        "setup_steps": [
+            "Establish what's expected (expertise, preparation, goal).",
+            "Show the ironic opposite result.",
+            "End on the contrast."
+        ],
+        "quality_checks": [
+            "The expectation is clear and believable.",
+            "The ironic twist is immediate and sharp.",
+            "No need to explain why it's ironic."
+        ],
+        "prompt_template": (
+            "Set up a clear expectation, then reveal the ironic opposite. "
+            "Keep it tight. End on the strongest contrast."
+        )
+    },
+
+    "Observational (relatable truth → twist)": {
+        "principle": "Start with a universally relatable observation or truth.",
+        "surprise": "Add an unexpected angle or exaggerated conclusion.",
+        "setup_steps": [
+            "Pick something everyone experiences (traffic, phones, meetings...).",
+            "State the relatable truth plainly.",
+            "Twist with an absurd exaggeration or unexpected perspective."
+        ],
+        "quality_checks": [
+            "The observation is genuinely relatable.",
+            "The twist adds surprise, not just agreement.",
+            "End with the most exaggerated or absurd element."
+        ],
+        "prompt_template": (
+            "Start with a relatable observation everyone knows. "
+            "Then twist it with an unexpected angle or absurd conclusion. 2-3 lines."
+        )
+    },
+
+    "Self-aware (meta rule-break)": {
+        "principle": "Acknowledge the joke-telling format itself.",
+        "surprise": "Break the fourth wall or comment on the joke's own structure.",
+        "setup_steps": [
+            "Start like a normal joke setup.",
+            "Acknowledge you're telling a joke or that the setup is artificial.",
+            "End by commenting on or subverting the joke format itself."
+        ],
+        "quality_checks": [
+            "The meta-awareness is explicit, not subtle.",
+            "The rule-break feels deliberate and clever.",
+            "Works best as a surprise ending."
+        ],
+        "prompt_template": (
+            "Tell a joke that acknowledges it's a joke. "
+            "Break the fourth wall. Comment on your own setup or punchline structure."
         )
     }
 }
