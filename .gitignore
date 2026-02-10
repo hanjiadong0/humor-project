@@ -1,18 +1,11 @@
-data/
-src/data-analysis/outputs/
+# too large for GitHub
+src/evaluation/mistral_model/checkpoints_ministral3_multitask/checkpoint-600/optimizer.pt
+src/evaluation/mistral_model/checkpoints_ministral3_multitask/checkpoint-600/adapter_model.safetensors
+src/generation/llama3_humor-finetune/llama3-humor-lora/adapter_model.safetensors
+src/generation/llama3_humor-finetune/llama3-humor-lora/checkpoint-2300/optimizer.pt
+src/generation/llama3_humor-finetune/llama3-humor-lora/checkpoint-2300/adapter_model.safetensors
 
-# model checkpoints / weights
-src/evaluation/mistral_model/checkpoints_ministral3_multitask/
-src/generation/llama3_humor-finetune/
-src/generation/rag_index/
-**/checkpoints**/
-**/*.safetensors
-**/*.pt
-**/*.pth
-**/*.bin
-**/*.ckpt
-
-# cache
+# always ignore python cache
 __pycache__/
 *.pyc
-wandb/
+
