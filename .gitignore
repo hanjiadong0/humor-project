@@ -8,6 +8,10 @@ src/generation/llama3_humor-finetune/llama3-humor-lora/checkpoint-2300/adapter_m
 # Windows reserved device names (created by tools that try to write to /dev/null)
 nul
 
+# IDE / tool config
+.claude/
+.vscode/
+
 # always ignore python cache
 __pycache__/
 *.pyc
