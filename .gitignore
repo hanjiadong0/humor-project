@@ -1,0 +1,18 @@
+data/
+src/data-analysis/outputs/
+
+# model checkpoints / weights
+src/evaluation/mistral_model/checkpoints_ministral3_multitask/
+src/generation/llama3_humor-finetune/
+src/generation/rag_index/
+**/checkpoints**/
+**/*.safetensors
+**/*.pt
+**/*.pth
+**/*.bin
+**/*.ckpt
+
+# cache
+__pycache__/
+*.pyc
+wandb/
