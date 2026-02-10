@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pdflatex:*)",
+      "Bash(mpm --update-db)",
+      "Bash(miktex packages check-update:*)",
+      "Bash(miktex packages update:*)",
+      "Bash(initexmf:*)",
+      "Bash(chktex:*)",
+      "Bash(miktex:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

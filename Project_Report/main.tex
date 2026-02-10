@@ -1,0 +1,506 @@
+\documentclass[12pt]{report}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref} 
+\usepackage{geometry}
+\usepackage{pdfpages}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{pythontex} 
+\usepackage{listings}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{svg}
+\renewcommand{\thesection}{\arabic{section}.}
+
+
+\urlstyle{same}
+\geometry{margin=2cm}
+\usepackage{fancyhdr} 
+\urlstyle{same}
+\geometry{margin=2cm}
+
+% Define the cover page style
+\fancypagestyle{coverpage}{
+%\vspace{3ex}
+  \fancyhf{} % Clear header and footer
+  \renewcommand{\headrulewidth}{0pt} % Remove header rule
+  \renewcommand{\footrulewidth}{0pt} % Remove footer rule
+  % Left logo
+  \fancyfoot[L]{\raisebox{4cm}{\includegraphics[height=2.3cm]{logos/CAISA-LAB-logo.png }}}
+  \vspace*{-2cm}
+  % Right logo
+  \fancyfoot[R]{\raisebox{4cm}{\includegraphics[height=2.3cm]{logos/uni-bonn-logo.jpg}}}
+ \vspace*{-0.5cm}
+}
+
+
+
+
+\begin{document}
+ \setlength {\marginparwidth }{2cm} 
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\center
+
+%	HEADING SECTIONS
+\vspace*{2cm}
+\textsc{\LARGE University of Bonn}\\[0.5cm]
+\textsc{\Large CAISA LAB}\\[1.0cm]
+\textsc{\Large Introduction to Natural Language Processing}\\[0.5cm]
+\textsc{\large (Winter Semester 2025/2026)}\\[0.5cm] 
+\textsc{\large Project Report of Team 19 {% Enter your Team Number here
+}}\\[0.5cm] 
+
+%	TITLE SECTION
+
+\HRule\\[0.4cm]
+{\huge \bfseries {}}
+\HRule \\[3.5cm]
+ 
+%	AUTHOR SECTION
+
+\begin{minipage}{1\textwidth}
+\begin{flushleft} \large
+\textsc{\large Group Members:}\\[0.5cm]
+
+\textsc{Jiadong Han} \hfill 3198936 \\
+\textsc{Rami Kallel} \hfill 50019733 \\
+\textsc{Zhuangyu Zhou} \hfill 50359013 \\
+\textsc{Mohammad Saeed Motevali Amin} \hfill 50246276 \\
+\textsc{Polad Ibrahimov} \hfill 50427387 \\
+
+\end{flushleft}
+
+\end{minipage}\\[2cm]
+\hfill \break
+\break{}
+\thispagestyle{coverpage}
+
+{\large \today}\\[2cm] % Date
+
+\vfill
+\end{titlepage}
+
+\section{Introduction:}
+
+Humor is one of the most complex forms of language use, requiring creativity, cultural awareness, and the ability to establish and subvert expectations. While Natural Language Processing (NLP) has made significant progress in humor understanding, detecting whether a given text is funny or classifying joke types, humor generation remains a largely underexplored frontier.
+
+This project addresses the challenge of automatic humor generation as defined by SemEval 2026 Task 1: \textbf{MWAHAHA (Models Write Automatic Humor And Humans Annotate)}, the first shared task dedicated to computational humor generation. Specifically, we tackle two subtasks: \textbf{Subtask A: Text-based Humor Generation} under the \textbf{Word Inclusion} constraint, where a system must generate a joke that naturally incorporates two specific words drawn from a list of rare word combinations, and \textbf{Subtask B: Headline Humor Generation}, where the system must create humorous headlines for news articles. The use of rare word pairs in Subtask A is designed to prevent systems from simply retrieving existing jokes, thereby encouraging genuine creative generation.
+
+Our approach combines a fine-tuned Llama 3 8B model with retrieval-augmented generation and a secondary LLM-based generator, coordinated through an agentic pipeline that iteratively generates, scores, and refines candidate jokes.
+The central research question guiding this work is:
+
+\textit{How effectively can a multi-model pipeline generate creative, high-quality humor that naturally incorporates arbitrary constraints, whether word pair inclusions or news headline contexts?}
+
+
+We hypothesize that combining specialized fine-tuning for humor with retrieval-augmented context, complementary generation from GPT-OSS-120B through carefully designed prompts that establish the model as an expert comedy writer with knowledge of multiple humor techniques, and automated quality scoring will produce creative, high-quality jokes.
+
+\section{Related Work}
+
+Early work in computational humor focused primarily on humor detection and rigid template-based generation, with classic rule-based systems such as JAPE  \cite{binsted1994implemented} and HAHAcronym \cite{stock2003hahacronym} producing structurally valid but narrowly scoped jokes. Neural approaches later introduced greater flexibility, including RNN- and GAN-based pun generation \cite{su2025survey}. More recently, transformer-based systems have enabled contextual and stylistically richer humor generation, exemplified by AmbiPun \cite{mittal2022ambipun} and hybrid symbolic–LLM systems such as Witscript 3 \cite{toplyn2023witscript}. Prior work shows that fine-tuning with curated humor datasets can improve performance \cite{vikhorev2024cleancomedy}. Parameter-efficient fine-tuning methods such as LoRA \cite{hu2022lora} and its quantized variant QLoRA \cite{dettmers2023qlora} enable effective adaptation of large models under limited computational resources and have shown promise in humor-focused settings. In parallel, Retrieval-Augmented Generation (RAG)\cite{NEURIPS2020_6b493230}, though traditionally applied to factual tasks, has been explored for creative generation by retrieving stylistically similar examples; we adopt a similar approach using Maximal Marginal Relevance \cite{carbonell} to balance relevance and diversity. Finally, due to the subjectivity of humor, automatic evaluation remains challenging, motivating the use of LLM-based evaluators such as GPTScore \cite{fu2023gptscoreevaluatedesire}, G-Eval \cite{liu2023gevalnlgevaluationusing}, and humor-specific multi-dimensional scoring frameworks \cite{sakabe2025assessingcapabilitiesllmshumora}, which we follow in our evaluation setup.
+
+\section{Data Exploration and Preprocessing}
+
+This study utilizes three humor datasets for joke generation and evaluation:
+
+\textbf{rJokes Dataset (25,000 samples):} Sourced from Reddit's r/jokes community (2008-2019)\footnote{\url{https://github.com/orionw/rJokesData}}, this dataset contains jokes with user-voted quality scores (0-9). We first applied text normalization and then filtered jokes with scores $\geq$ 4 and word counts between 5-30 words, yielding 25,000 training examples for fine-tuning Llama 3 8B. We then extracted rare word pairs appearing five times or fewer across the corpus and formatted each example as an instruction-response pair using Llama 3's chat template. Each example prompts the model to generate jokes incorporating specific word pairs. Table~\ref{tab:dataset_stats} shows the score statistics, demonstrating a concentration in the mid-to-high quality range.
+
+\begin{table}[H]
+\centering
+\caption{Comparative statistics across the three humor datasets}
+\label{tab:dataset_stats}
+\begin{tabular}{lccc}
+\hline
+\textbf{Metric} & \textbf{rJokes} & \textbf{Short Jokes} & \textbf{HaHackathon} \\
+\hline
+\multicolumn{4}{l}{\textit{Dataset Information}} \\
+Total Entries & 25,000 & 20,000 & 8,000 \\
+Rating Scale & 0--9 (discrete) & -- & 0--4 (continuous) \\
+Mean Rating & [5.15] & -- & [2.26] \\
+Std Rating & [1.46] & -- & [0.56] \\
+\hline
+\multicolumn{4}{l}{\textit{Word Count Statistics}} \\
+Mean & [20.46] & [20.03] & [20.89] \\
+Std Dev & [5.73] & [5.55] & [9.69] \\
+\hline
+\multicolumn{4}{l}{\textit{Character Count Statistics}} \\
+Mean & [111.77] & [113.22] & [112.93] \\
+Std Dev & [31.97] & [30.55] & [52.88] \\
+\hline
+\multicolumn{4}{l}{\textit{Vocabulary Statistics}} \\
+Total Tokens & [236,123] & [195,193] & [74,351] \\
+Unique Words & [11,505] & [21,634] & [13,240] \\
+Vocab. Richness & [0.0487] & [0.1108] & [0.1781] \\
+\hline
+\end{tabular}
+\end{table}
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.95\textwidth]{figures/score_distribution.png}
+%     \caption{Score distribution for rJokes dataset. Left: raw dataset (scores 0-9). Right: filtered dataset.}
+%     \label{fig:rjokes_score}
+% \end{figure}
+
+\textbf{Short Jokes Dataset (20,000 samples):} Obtained from the ``Jokes Short and Funny'' collection\footnote{\url{https://app.gigasheet.com/spreadsheet/jokes-short-and-funny/58c7db9f_ba90_4fbf_a2a8_54cc2acb71da}}, we extracted 20,000 jokes using similar filtering criteria (5-30 words, rare word pairs). This dataset serves as the retrieval corpus for RAG-based generation, providing contextual examples during inference. The RAG database was constructed by embedding all 20,000 Short Jokes using Sentence-BERT and indexing them with FAISS.
+
+\textbf{HaHackathon Dataset (8,000 samples)\cite{meaney-etal-2021-semeval}:} This dataset\footnote{\url{https://aclanthology.org/2021.semeval-1.9}} contains humor samples with continuous ratings (0-4 scale). We used all samples without length filtering to train a Mistral-based evaluation model. We applied text normalization, and tokenized the text with a maximum length of 512 tokens for fine-tuning Mistral 3.
+
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics[width=0.95\textwidth]{figures/humor_rating_distribution.png}
+%     \caption{Humor rating distribution in the HaHackathon dataset (0-5 continuous scale).}
+%     \label{fig:haha_rating}
+% \end{figure}
+
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics[width=\textwidth]{figures/dataset_comparison.png}
+%     \caption{Dataset comparison. Row 1: Word count distributions. Row 2: Character count distributions. Row 3: Top 20 content words (excluding stop words). Columns represent rJokes (left), Short Jokes (center), and HaHackathon (right).}
+%     \label{fig:comparison}
+% \end{figure}
+
+% Figure~\ref{fig:comparison} presents a comprehensive comparison across all three datasets. The word count distributions (row 1) show that rJokes and Short Jokes datasets exhibit similar patterns due to their shared filtering criteria, with means around 20-25 words. HaHackathon displays broader distribution, reflecting diverse joke formats. Character count distributions (row 2) mirror these patterns. The vocabulary analysis (row 3) reveals common themes across datasets while highlighting unique characteristics of each corpus.
+
+\section{Methodology}
+
+This section describes the system architecture and the techniques behind each component of our humor generation pipeline for the subtasks.
+
+\subsection{System Architecture Overview}
+
+Our system follows a generate-then-score paradigm orchestrated as a stateful directed graph. Given a word pair or a headline, two generators, a fine-tuned Llama 3 model and GPT-OSS-120B, produce candidate jokes in parallel. The Llama generator runs in two modes (with and without RAG), while GPT-OSS produces additional candidates independently. All candidates are pooled and scored by a dual evaluation system: a fine-tuned Mistral-based humor scorer (primary) and a GPT-OSS multi-criteria scorer (secondary, used to investigate evaluation bias). If the best score meets a quality threshold or the maximum iterations are reached, the best joke is returned; otherwise, the pipeline loops for another round of generation and scoring.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{figures/Joke_Pipeline.png}
+  \caption{System overview: retrieval-augmented generation, multi-candidate sampling, and evaluation-driven selection.}
+  \label{fig:app_pipeline}
+\end{figure}
+\label{app:training_metrics}
+
+\subsection{Fine-Tuned Llama 3 with QLoRA}
+
+We use Meta's \textbf{Llama 3 8B-Instruct} as our base generator, adapted for humor generation through \textbf{QLoRA (Quantized Low-Rank Adaptation)}. QLoRA combines 4-bit NF4 quantization of the frozen base model with trainable low-rank adapter matrices applied to all attention and feed-forward projection layers. The model is trained on joke examples formatted as Llama 3 chat conversations, where the user message contains a word pair constraint and the assistant message contains a joke.
+
+\subsection{Chain-of-Thought Prompt Pipeline}
+
+Rather than prompting the model with a single instruction, we implement a three-stage chain-of-thought (CoT) pipeline that structures the creative reasoning process:
+
+\begin{enumerate}
+    \item \textbf{Associations}: The model generates 10 diverse associations for the input word pair, mixing objects, emotions, places, actions, and metaphors to broaden the conceptual space.
+    \item \textbf{Imagery}: Associations are transformed into vivid, concise mental images ($\leq$ 12 words each), converting abstract concepts into concrete scenarios suitable for humor.
+    \item \textbf{Final Joke}: Imagery candidates are combined with a pattern-specific prompt following a \textbf{Principle $\rightarrow$ Surprise} framework: the joke establishes a clear expectation and then subverts it logically but unexpectedly.
+\end{enumerate}
+
+The pipeline supports 15 humor patterns (puns, absurd logic, mini stories, sarcasm, deadpan, rule of three, literalism, etc.), each with a defined principle-surprise structure and style guide. The humour patterns are extracted from comedy textbooks and chosen at random by the model
+
+\subsection{Retrieval-Augmented Generation (RAG)}
+
+To provide stylistic inspiration at inference time, we implement a RAG system over a separate database of 20,000 jokes. Embeddings are created using \textbf{sentence-transformers/all-MiniLM-L6-v2} and indexed with \textbf{FAISS} for cosine similarity search. To avoid retrieving near-identical examples, we apply \textbf{Maximal Marginal Relevance (MMR)}, which iteratively selects results balancing relevance with diversity. Retrieved jokes are included in the prompt as inspiration, with instructions to analyze humor mechanisms rather than copy content.
+
+\subsection{GPT-OSS-120B Joke Generator}
+
+As a complementary generator, \textbf{GPT-OSS-120B} (accessed via the NVIDIA API) brings the broad creative capabilities of a larger model. It uses a system prompt establishing the model as a comedy writer and requests jokes in multiple comedic styles, with JSON-formatted output for reliable parsing.
+
+\subsection{Dual Evaluation System}
+
+Evaluating humor is inherently subjective, and using the same model family for both generation and evaluation risks systematic bias. We therefore implement two independent scorers.
+
+\textbf{Fine-Tuned Mistral Scorer (Primary).} A \textbf{Mistral-3-8B} model fine-tuned as a multi-task model on the HaHackathon dataset, which contains human humor ratings on a 0--4 scale. The architecture uses a shared transformer backbone with two task-specific heads: a classification head for binary humor detection and a regression head for predicting humor ratings. Raw scores are normalized to a 0--10 scale using a piecewise linear mapping calibrated against the training data distribution.
+
+\textbf{GPT-OSS-120B Scorer (Secondary / Bias Experiment).} GPT-OSS provides multi-criteria quality assessment across five dimensions: creativity (25\%), word integration (20\%), humor impact (30\%), structure (15\%), and cleverness (10\%). This scorer serves a dual purpose: complementary quality assessment and investigation of whether same-model generation and evaluation introduces scoring bias. In our final evaluation, only the Mistral scores are considered as the primary metric; GPT-OSS scores are reported separately for the bias analysis. We will try different APIs from other model families in future work.
+
+% During the iterative refinement loop, a weighted ensemble of both scores determines whether to continue iterating, but the final reported evaluation relies on the Mistral scorer alone.
+
+\subsection{LangGraph Orchestrator}
+
+The pipeline is orchestrated using \textbf{LangGraph}, a framework for stateful multi-step workflows as directed graphs. Both generators are invoked in parallel, their outputs are pooled, scored by both evaluators, and routed through a conditional edge: if the quality threshold is met or maximum iterations are reached, the pipeline outputs the result; otherwise, it loops back. The state tracks all jokes, scorer outputs, iteration history, and the best result throughout.
+
+\section{Experimental Setup}
+
+\subsection{Llama 3 Fine-Tuning}
+
+The Llama 3 8B-Instruct model is fine-tuned on 25,000 joke examples using QLoRA. The base model is loaded in 4-bit NF4 quantization with bfloat16 compute dtype. LoRA adapters (rank 16, alpha 32, dropout 0.05) are applied to all seven projection layers (q, k, v, o, gate, up, down). Training runs for 3 epochs with a batch size of 20, a learning rate of 2e-4 with cosine scheduling and 3\% warmup, and a maximum sequence length of 256 tokens. The paged AdamW 8-bit optimizer and gradient checkpointing are used to fit training within a single GPU. The dataset is split 95/5 into training and evaluation sets, with the best checkpoint selected by lowest evaluation loss.
+
+\subsection{Mistral Evaluator Fine-Tuning}
+
+The Ministral-3-8B model is fine-tuned on the HaHackathon dataset (8,000 texts with binary humor labels and 0--4 humor ratings). The base model uses the same 4-bit NF4 quantization. LoRA adapters share the same configuration as Llama (rank 16, alpha 32, dropout 0.05, all projection layers). The multi-task loss combines cross-entropy for classification and MSE for regression with equal weighting. Training runs for 3 epochs with a batch size of 4, a learning rate of 2e-4 with cosine scheduling and 136 warmup steps, and a maximum sequence length of 512 tokens. The dataset is split 90/10 into training (7,200) and validation (800) sets. we use early stop for finding breaking out point. After plotting the learning curve, we choose the weight with the least validation loss
+
+\subsection{Inference Configuration}
+
+The fine-tuned Llama generates with temperature 0.65 and top-p 0.9. The CoT prompt pipeline uses progressively increasing temperatures: 0.7 for associations, 0.8 for imagery, and 0.9 for final joke generation. GPT-OSS-120B generates at temperature 0.8 and scores at 0.4 for consistency. The Mistral evaluator runs deterministically with no dropout. The RAG system retrieves from a pool of 12 candidates, applies MMR with $\lambda = 0.4$, and includes the top 3 examples in the prompt. The pipeline runs with a maximum of 1 iteration per word pair or headline and a score threshold of 7.0/10.
+
+\subsection{Compute Environment}
+
+Both Llama and Mistral fine-tuning, as well as all inference, were run locally on an NVIDIA RTX 5090 Laptop GPU (26 GB VRAM). The combination of 4-bit quantization and LoRA adapters enabled both training and multi-model inference within single-GPU memory constraints.
+
+
+
+
+\section{Evaluation and Results}
+\label{sec:eval_results}
+
+\paragraph{Metrics.}
+We report results using a fine-tuned Mistral evaluator (raw scale \([0,4]\)), linearly normalized to \([0,10]\).
+Due to potential self-preference bias when using GPT as both generator and evaluator, GPT-based scoring is treated only as an auxiliary bias check and is not used for final reporting.
+Figures and example jokes are deferred to the Appendix due to the 7-page limit.
+
+\paragraph{Overall performance (Mistral-only).}
+Table~\ref{tab:mistral_overall} summarizes overall results.
+Word-Inclusion achieves a mean score of 5.29 over 198 candidates, while Headline humor is lower on average (mean 4.08 over 61 samples), suggesting the headline setting is more challenging.
+
+\begin{table}[H]
+\centering
+\small
+\setlength{\tabcolsep}{7pt}
+\begin{tabular}{lrrrr}
+\hline
+\textbf{Task} & \textbf{N} & \textbf{Mean} & \textbf{Std} & \textbf{Range} \\
+\hline
+Word-Inclusion & 198 & 5.286 & 0.580 & [2.68, 7.05] \\
+Headline & 61 & 4.080 & 1.877 & [0.00, 6.42] \\
+\hline
+\end{tabular}
+\caption{Overall Mistral-normalized scores (0--10).}
+\label{tab:mistral_overall}
+\end{table}
+
+\paragraph{Ranking alignment and source effects.}
+Under Mistral scoring, the Word-Inclusion rank-score correlation is weak (corr $\approx -0.05$), indicating the current rank ordering is not strongly aligned with the final metric.
+For the headline task, Mistral scores are relatively stable across generator sources (Table~\ref{tab:headline_source_mistral}), supporting the use of Mistral as a more comparable evaluator across generators.
+
+\begin{table}[H]
+\centering
+\small
+\setlength{\tabcolsep}{7pt}
+\begin{tabular}{lrrrr}
+\hline
+\textbf{Source} & \textbf{N} & \textbf{Mean} & \textbf{Std} & \textbf{Max} \\
+\hline
+GPT & 25 & 4.234 & 1.636 & 5.66 \\
+Llama & 36 & 3.972 & 2.044 & 6.42 \\
+\hline
+\end{tabular}
+\caption{Headline task: Mistral scores (0--10) by generator source.}
+\label{tab:headline_source_mistral}
+\end{table}
+
+
+
+
+\section{Analysis and Discussion}
+\label{sec:analysis_discussion}
+
+\paragraph{Key observations.}
+Headline humor is harder than Word-Inclusion under the Mistral metric (Table~\ref{tab:mistral_overall}).
+For Word-Inclusion, the weak rank-score correlation (corr $\approx -0.05$) suggests that our ranking stage is not well calibrated to the final evaluation signal and remains a bottleneck.
+
+\paragraph{Failure modes (lightweight manual inspection).}
+From a small qualitative review (see Appendix examples), low-scoring outputs commonly show:
+(i) forced keyword insertion without narrative necessity,
+(ii) weak or missing punchlines (descriptive rather than humorous),
+(iii) incoherent setup-payoff transitions,
+(iv) generic templates that reduce surprise, and
+(v) weird expressions or phrasing that may be be funny in case of formulation, but the content makes no sense.
+
+\paragraph{Evaluator bias and metric choice.}
+Automatic evaluation can be biased.
+In particular, using the same model family for generation and evaluation may introduce self-preference effects, potentially distorting Top-$K$ selection.
+Therefore, we use the independent Mistral evaluator as the primary metric for final reporting and treat GPT-based scoring only as an auxiliary bias-detection experiment.
+
+\paragraph{Implications.}
+To improve reliability, future iterations should align reranking directly with the final metric (or use preference-based ranking / small-scale human evaluation) and incorporate more robust evaluation beyond a single automatic scorer.
+
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+We presented a constrained humor generation pipeline for two settings: (i) word-inclusion jokes and (ii) humorous headline rewriting.
+To reduce evaluator-source bias, we report final results primarily using a fine-tuned Mistral evaluator (normalized to 0--10), treating GPT-based scoring only as an auxiliary bias check.
+Quantitatively, Word-Inclusion achieves a mean Mistral score of 5.29 over 198 candidates, while the Headline task is more challenging with a mean of 4.08 over 61 samples.
+A key limitation is that the current ranking order is weakly aligned with the final (Mistral) metric for Word-Inclusion (corr $\approx -0.05$), suggesting reranking remains a bottleneck.
+Overall, our results indicate that candidate diversification is necessary for constrained humor generation, but reliable selection and evaluation are the critical factors for consistent quality.
+
+
+\section{Future Work}
+\label{sec:future_work}
+
+\paragraph{Align reranking with the final metric.}
+Since rank-score alignment is weak under the adopted Mistral evaluator, a direct next step is to rerank candidates using the same scoring signal (or train a lightweight reranker to predict the Mistral preference), rather than relying on mismatched or mixed scoring criteria.
+
+\paragraph{More reliable evaluation.}
+Automatic humor evaluation is inherently noisy and can be biased.
+Future work should incorporate small-scale human preference judgments, pairwise comparisons, or multi-evaluator consensus to improve robustness and reduce evaluator-specific artifacts. And we should try different AI APIs for evaluation instead of relying on a single model family. 
+For word-inclusion, we can strengthen constraint adherence while preserving fluency by adding explicit constraint checks (e.g., exact keyword match, placement rules) and penalizing forced insertion patterns.
+
+\paragraph{Task-specific improvements for headlines.}
+For headline humor, adding controllable style constraints (brevity, factual anchor preservation, and a clearer punchline structure) and using retrieval for stylistic examples may improve consistency without sacrificing relevance. 
+
+\bibliographystyle{unsrt}
+
+\bibliography{references}
+
+\clearpage
+\section*{Appendix}
+\addcontentsline{toc}{section}{Appendix}
+\appendix
+
+\section{Additional Figures and Example Outputs}
+Due to the 7-page limit, we include additional plots and representative examples here.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{figures/overview_2x2.png}
+  \caption{Mistral-only results overview: (a) Word-Inclusion score distribution, (b) Word-Inclusion score vs. rank, (c) Headline score distribution, (d) Headline score by generator source.}
+  \label{fig:app_overview}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{figures/dataset_comparison.png}
+  \caption{Dataset comparison across sources: token/character distributions and representative vocabulary statistics.}
+  \label{fig:app_dataset_comparison}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{figures/humor_rating_distribution.png}
+  \caption{Humor rating distribution in the HaHackathon dataset (0-4 continuous scale).}
+  \label{fig:app_humor_rating}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{figures/score_distribution.png}
+  \caption{Score distribution for rJokes dataset. Left: raw dataset (scores 0-9). Right: filtered dataset.}
+  \label{fig:app_score_filtering}
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{figures/example_AI_jokes.png}
+  \caption{Example AI-generated jokes from our pipeline.}
+  \label{fig:app_example_jokes}
+\end{figure}
+
+\section{Technical Steps}
+
+\subsection{Checkpoint selection}
+\paragraph{Mistral (evaluator).}
+We selected the LoRA checkpoint \texttt{checkpoint-2300}. Empirically, the evaluation loss reached its minimum around step $\approx 2350$. Later steps showed mild overfitting (train loss continuing to decrease while eval loss stopped improving).
+
+\paragraph{Ministral-3-8B (evaluator).}
+We selected \texttt{checkpoint-600} as the best checkpoint based on the highest composite validation score (combining evaluation loss, regression $R^2$, and classification F1). Performance after $\ge 1200$ steps indicated overfitting on the smaller rated subset.
+
+\subsection{Evaluation metrics}
+\label{app:metrics}
+
+\subsubsection{Classification metrics}
+\begin{itemize}
+  \item \textbf{Accuracy:} proportion of correct humor/not-humor predictions.
+  \item \textbf{Precision/Recall/F1:} computed for the humor class (positive class).
+\end{itemize}
+
+\subsubsection{Regression metrics}
+\begin{itemize}
+  \item \textbf{MAE:} mean absolute error between predicted and gold rating (rated subset).
+  \item \textbf{RMSE:} root mean squared error (rated subset).
+  \item \textbf{$R^2$:} coefficient of determination on the rated subset.
+\end{itemize}
+
+\subsection{Learning curves}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{figures/llama3_learning_curves.png}
+  \caption{llama learning curves with training loss and validation metrics to find the optimal model weight}
+  \label{fig:app_score_filtering}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{figures/mistral_learning_curves.png}
+  \caption{mistral learning curves with training loss and validation metrics to find the optimal model weigh }
+  \label{fig:app_score_filtering}
+\end{figure}
+
+\subsection{Fine-tuning Configuration}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{ll}
+\hline
+\textbf{Parameter} & \textbf{Value} \\
+\hline
+Base model & \texttt{meta-llama/Meta-Llama-3-8B-Instruct} \\
+Method & SFT + LoRA (QLoRA 4-bit) \\
+LoRA rank ($r$) & 16 \\
+LoRA $\alpha$ & 32 \\
+LoRA dropout & 0.05 \\
+Target modules & \texttt{q,k,v,o,gate,up,down\_proj} \\
+Max seq length & 256 \\
+Learning rate & $2\times 10^{-4}$ \\
+Scheduler & cosine \\
+Epochs & 3 \\
+Batch size & 20 \\
+Precision & BF16 \\
+Gradient checkpointing & enabled \\
+Optimizer & \texttt{paged\_adamw\_8bit} \\
+Save steps / Eval steps & 100 / 50 \\
+\hline
+\end{tabular}
+\caption{Llama-3-8B LoRA SFT configuration.}
+\label{tab:llama_sft_cfg}
+\end{table}
+
+
+
+\begin{table}[h]
+\centering
+\small
+\caption{Ministral3 multi-task fine-tuning LoRA Configuration for }
+\label{tab:lora-config}
+\begin{tabular}{ll}
+\hline
+\textbf{Parameter} & \textbf{Value} \\
+\hline
+r & 16 \\
+lora\_alpha & 32 \\
+lora\_dropout & 0.05 \\
+bias & none \\
+task\_type & SEQ\_CLS \\
+target\_modules & q\_proj, k\_proj, v\_proj, o\_proj, gate\_proj, up\_proj, down\_proj \\
+modules\_to\_save & cls\_head, reg\_head \\
+output\_dir & ./checkpoints\_ministral3\_multitask \\
+num\_train\_epochs & 3 \\
+per\_device\_train\_batch\_size & 4 \\
+per\_device\_eval\_batch\_size & 8 \\
+gradient\_accumulation\_steps & 1 \\
+learning\_rate & 2e-4 \\
+weight\_decay & 0.01 \\
+logging\_steps & 10 \\
+save\_steps & 200 \\
+eval\_strategy & steps \\
+eval\_steps & 200 \\
+bf16 & True \\
+fp16 & False \\
+max\_grad\_norm & 1.0 \\
+warmup\_steps & 136 \\
+lr\_scheduler\_type & cosine \\
+report\_to & tensorboard \\
+dataloader\_num\_workers & 4 \\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+\end{document}
