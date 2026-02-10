@@ -1,27 +1,11 @@
-# --- Secrets (never commit) ---
-.env
-.env.*
-!.env.example
-secrets.*
-*.key
-*.pem
+# too large for GitHub
+src/evaluation/mistral_model/checkpoints_ministral3_multitask/checkpoint-600/optimizer.pt
+src/evaluation/mistral_model/checkpoints_ministral3_multitask/checkpoint-600/adapter_model.safetensors
+src/generation/llama3_humor-finetune/llama3-humor-lora/adapter_model.safetensors
+src/generation/llama3_humor-finetune/llama3-humor-lora/checkpoint-2300/optimizer.pt
+src/generation/llama3_humor-finetune/llama3-humor-lora/checkpoint-2300/adapter_model.safetensors
 
-# --- Python ---
+# always ignore python cache
 __pycache__/
 *.pyc
-.venv/
-
-# --- Editor / OS ---
-.vscode/
-.DS_Store
-Thumbs.db
-
-# --- Large data / outputs (customize) ---
-data/raw/
-data/processed/
-outputs/
-*.npy
-
-
-
 

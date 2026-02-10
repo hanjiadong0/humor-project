@@ -1,16 +1,53 @@
-@"
-torch
+# ============================================================
+# Humor Generation & Evaluation Pipeline - Requirements
+# ============================================================
+# Python >= 3.10 required
+#
+# PyTorch: Install BEFORE other packages. Choose your platform:
+#   CUDA 12.x:  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+#   CPU only:   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+#
+# Then install the rest:
+#   pip install -r requirements.txt
+# ============================================================
+
+# --- Core ML / Transformers ---
 transformers>=4.45.0
-datasets
-accelerate
-peft
-bitsandbytes
-trl
-scikit-learn
-pandas
-numpy
-pyyaml
-optuna
-evaluate
-matplotlib
-"@ | Set-Content requirements.txt
+accelerate>=0.26.0
+peft>=0.7.0
+datasets>=2.16.0
+safetensors>=0.4.0
+
+# --- Quantization (GPU only, optional for CPU inference) ---
+bitsandbytes>=0.42.0
+
+# --- Sentence Embeddings & Vector Search (RAG) ---
+sentence-transformers>=2.2.0
+faiss-cpu>=1.7.4
+
+# --- LLM API Client ---
+openai>=1.10.0
+
+# --- Workflow Orchestration ---
+langgraph>=0.0.30
+
+# --- Data Processing ---
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+pyyaml>=6.0
+
+# --- NLP (EDA only) ---
+spacy>=3.6.0
+
+# --- Visualization ---
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# --- Utilities ---
+python-dotenv>=1.0.0
+tqdm>=4.65.0
+
+# --- Optional: Experiment Tracking ---
+# wandb>=0.16.0
+# huggingface-hub>=0.20.0

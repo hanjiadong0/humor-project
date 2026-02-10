@@ -1,62 +1,166 @@
+# ============================================================
+# Generic Fine-Tuning Configuration
+# ============================================================
+# Shared defaults + per-model profile overrides.
+# Usage: load defaults, then merge the chosen profile on top.
+#
+#   cfg = yaml.safe_load(open("configs/default.yaml"))
+#   profile = cfg["profiles"]["mistral_evaluator"]  # or "llama_generator"
+#   merged = {**cfg["defaults"], **profile}
+# ============================================================
+
+# --- Project-level settings ---
 project:
   seed: 42
-  output_dir: outputs/mistral_multitask
+  output_dir: outputs/         # base; profiles append subdirectory
 
-data:
-  raw_dir: data/raw
-  processed_path: data/processed/unified.parquet
-  text_col_candidates: ["text", "joke", "body", "fulltext", "sentence"]
-  cls_label_candidates: ["label", "is_humor", "humor", "funny"]
-  reg_label_candidates: ["score", "rating", "humor_rating", "grade"]
+# --- Shared defaults (apply to all fine-tuning runs) ---
+defaults:
 
-labels:
-  # unify targets:
-  # cls: 0/1
-  # reg: 0..5
-  reg_min: 0.0
-  reg_max: 5.0
-  # how to derive cls from reg when cls missing (optional)
-  cls_from_reg_threshold: 3.0
-  reg_quantile: 0.95
+  # LoRA
+  lora:
+    enabled: true
+    r: 16
+    alpha: 32
+    dropout: 0.05
+    bias: "none"
+    target_modules: ["q_proj", "k_proj", "v_proj", "o_proj"]
 
-model:
-  base_model: mistralai/Mistral-7B-Instruct-v0.2
-  max_length: 256
+  # Quantization (QLoRA)
+  quantization:
+    load_in_4bit: true
+    bnb_4bit_quant_type: "nf4"
+    bnb_4bit_use_double_quant: false
+    bnb_4bit_compute_dtype: "bfloat16"
 
-lora:
-  enabled: true
-  r: 16
-  alpha: 32
-  dropout: 0.05
-  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj"]
+  # Training
+  train:
+    num_train_epochs: 3
+    learning_rate: 2.0e-4
+    per_device_train_batch_size: 4
+    per_device_eval_batch_size: 4
+    gradient_accumulation_steps: 1
+    warmup_ratio: 0.03
+    weight_decay: 0.0
+    max_grad_norm: 1.0
+    lr_scheduler_type: "cosine"
+    gradient_checkpointing: true
 
-train:
-  task: multitask
-  num_train_epochs: 1
+    # Precision (adjust per platform)
+    # Linux/Ampere+: bf16=true, fp16=false
+    # Windows/older GPU: bf16=false, fp16=true
+    bf16: true
+    fp16: false
 
-  learning_rate: 0.0002      # <- statt 2e-4 (verhindert String-Missverständnisse)
-  per_device_train_batch_size: 1
-  per_device_eval_batch_size: 1
-  gradient_accumulation_steps: 16   # effektiv Batch=16, stabil & effizient
+    # Logging & checkpointing
+    logging_steps: 10
+    save_steps: 200
+    eval_strategy: "steps"
+    eval_steps: 200
+    save_total_limit: 5
+    load_best_model_at_end: true
+    report_to: "none"          # "tensorboard", "wandb", or "none"
 
-  warmup_ratio: 0.03
-  weight_decay: 0.0
+  # Data
+  data:
+    max_length: 256
+    val_size: 0.1
 
-  logging_steps: 10          # nicht 1 (1 ist zu spammy und bremst)
-  eval_steps: 999999999      # praktisch "nie" (aber int!)
-  save_steps: 999999999      # praktisch "nie" (aber int!)
+# ============================================================
+# Model-specific profiles (override defaults as needed)
+# ============================================================
+profiles:
 
-  bf16: false                # Windows + bf16 kann zicken
-  fp16: true                 # fp16 ist meist stabiler unter Windows
-  
-loss:
-  cls_weight: 1.0
-  reg_weight: 1.0
+  # ----- Llama-3 Humor Generator (SFT) -----
+  llama_generator:
+    base_model: "meta-llama/Meta-Llama-3-8B-Instruct"
+    task: "sft"
+    output_dir: "outputs/llama3-humor-lora"
 
-cv:
-  enabled: false
-  folds: 5
+    data:
+      max_length: 256
+      train_jsonl: "data/humor_training_data_5000_Train.jsonl"
+      rag_jsonl: "data/humor_RAG_data_20000_RAG.jsonl"
 
-hpo:
-  enabled: false
-  n_trials: 15
+    train:
+      num_train_epochs: 3
+      per_device_train_batch_size: 20
+      per_device_eval_batch_size: 20
+      gradient_accumulation_steps: 1
+      learning_rate: 2.0e-4
+      warmup_ratio: 0.03
+      weight_decay: 0.0
+      save_steps: 100
+      eval_steps: 50
+
+    # SFT-specific
+    sft:
+      packing: false
+
+    # Dataloader (tune per machine)
+    dataloader:
+      num_workers: 10
+      pin_memory: true
+      prefetch_factor: 4
+
+    selected_checkpoint: "checkpoint-2300"
+
+  # ----- Mistral-3 Humor Evaluator (Multi-Task: cls + reg) -----
+  mistral_evaluator:
+    base_model: "mistralai/Ministral-3-8B-Base-2512"
+    task: "multitask"
+    output_dir: "outputs/mistral-multitask"
+
+    data:
+      max_length: 512
+      csv_path: "data/labeled_data/hahackathon_train.csv"
+      text_col: "text"
+      cls_col: "is_humor"
+      reg_col: "humor_rating"
+
+    lora:
+      target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+      modules_to_save: ["cls_head", "reg_head"]
+
+    train:
+      num_train_epochs: 3
+      per_device_train_batch_size: 4
+      per_device_eval_batch_size: 8
+      gradient_accumulation_steps: 1
+      learning_rate: 2.0e-4
+      warmup_steps: 136
+      weight_decay: 0.01
+      save_steps: 200
+      eval_steps: 200
+
+    # Multi-task loss weights
+    loss:
+      cls_weight: 1.0
+      reg_weight: 1.0
+      num_labels: 2
+
+    # Dataloader
+    dataloader:
+      num_workers: 4
+
+    selected_checkpoint: "checkpoint-600"
+
+  # ----- Mistral-3 Humor Classifier (experimental) -----
+  mistral_classifier:
+    base_model: "mistralai/Ministral-3-8B-Base-2512"
+    task: "classification"
+    output_dir: "outputs/mistral-classifier"
+
+    data:
+      max_length: 256
+      csv_path: "data/labeled_data/hahackathon_train.csv"
+      text_col: "text"
+      cls_col: "is_humor"
+
+    train:
+      num_train_epochs: 3
+      per_device_train_batch_size: 8
+      per_device_eval_batch_size: 8
+
+    loss:
+      num_labels: 2
