@@ -1,0 +1,22 @@
+{
+  "file": "humor_training_data_5000_Train_dedupByAnswer.jsonl",
+  "n_lines": 3121,
+  "parse_error": 0,
+  "missing_fields": 0,
+  "missing_user_or_assistant": 0,
+  "empty_answer": 0,
+  "short_answer_<4words": 0,
+  "word_constraint_pass": 3121,
+  "word_constraint_pass_rate": 1.0,
+  "prompt_dup_rate": 0.004806151874399231,
+  "answer_dup_rate": 0.0,
+  "pair_dup_rate": 0.0,
+  "prompt_len_mean": 112.41717398269785,
+  "answer_len_mean": 109.64947132329381,
+  "answer_len_p50": 110,
+  "answer_len_p90": 148,
+  "notes": [
+    "word_constraint_pass_rate should be close to 1.0 for SFT",
+    "answer_dup_rate/pair_dup_rate should be low for RAG usefulness"
+  ]
+}

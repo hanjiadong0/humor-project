@@ -1,0 +1,9 @@
+{
+  "n_total": 8000,
+  "n_has_score": 4932,
+  "n_no_score": 3068,
+  "is_humor_rate_has_score": 1.0,
+  "is_humor_rate_no_score": 0.0,
+  "offense_mean_has_score": 0.8987226277372263,
+  "offense_mean_no_score": 0.08151890482398957
+}
