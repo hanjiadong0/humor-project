@@ -214,7 +214,7 @@ Evaluating humor is inherently subjective, and using the same model family for b
 
 \textbf{Fine-Tuned Mistral Scorer (Primary).} A \textbf{Mistral-3-8B} model fine-tuned as a multi-task model on the HaHackathon dataset, which contains human humor ratings on a 0--4 scale. The architecture uses a shared transformer backbone with two task-specific heads: a classification head for binary humor detection and a regression head for predicting humor ratings. Raw scores are normalized to a 0--10 scale using a piecewise linear mapping calibrated against the training data distribution.
 
-\textbf{GPT-OSS-120B Scorer (Secondary / Bias Experiment).} GPT-OSS provides multi-criteria quality assessment across five dimensions: creativity (25\%), word integration (20\%), humor impact (30\%), structure (15\%), and cleverness (10\%). This scorer serves a dual purpose: complementary quality assessment and investigation of whether same-model generation and evaluation introduces scoring bias. In our final evaluation, only the Mistral scores are considered as the primary metric; GPT-OSS scores are reported separately for the bias analysis.
+\textbf{GPT-OSS-120B Scorer (Secondary / Bias Experiment).} GPT-OSS provides multi-criteria quality assessment across five dimensions: creativity (25\%), word integration (20\%), humor impact (30\%), structure (15\%), and cleverness (10\%). This scorer serves a dual purpose: complementary quality assessment and investigation of whether same-model generation and evaluation introduces scoring bias. In our final evaluation, only the Mistral scores are considered as the primary metric; GPT-OSS scores are reported separately for the bias analysis. We will try different APIs from other model families in future work.
 
 % During the iterative refinement loop, a weighted ensemble of both scores determines whether to continue iterating, but the final reported evaluation relies on the Mistral scorer alone.
 
@@ -305,8 +305,9 @@ For Word-Inclusion, the weak rank-score correlation (corr $\approx -0.05$) sugge
 From a small qualitative review (see Appendix examples), low-scoring outputs commonly show:
 (i) forced keyword insertion without narrative necessity,
 (ii) weak or missing punchlines (descriptive rather than humorous),
-(iii) incoherent setup-payoff transitions, and
-(iv) generic templates that reduce surprise.
+(iii) incoherent setup-payoff transitions,
+(iv) generic templates that reduce surprise, and
+(v) weird expressions or phrasing that may be be funny in case of formulation, but the content makes no sense.
 
 \paragraph{Evaluator bias and metric choice.}
 Automatic evaluation can be biased.
@@ -335,13 +336,11 @@ Since rank-score alignment is weak under the adopted Mistral evaluator, a direct
 
 \paragraph{More reliable evaluation.}
 Automatic humor evaluation is inherently noisy and can be biased.
-Future work should incorporate small-scale human preference judgments, pairwise comparisons, or multi-evaluator consensus to improve robustness and reduce evaluator-specific artifacts.
-
-\paragraph{Better control of constraint satisfaction.}
+Future work should incorporate small-scale human preference judgments, pairwise comparisons, or multi-evaluator consensus to improve robustness and reduce evaluator-specific artifacts. And we should try different AI APIs for evaluation instead of relying on a single model family. 
 For word-inclusion, we can strengthen constraint adherence while preserving fluency by adding explicit constraint checks (e.g., exact keyword match, placement rules) and penalizing forced insertion patterns.
 
 \paragraph{Task-specific improvements for headlines.}
-For headline humor, adding controllable style constraints (brevity, factual anchor preservation, and a clearer punchline structure) and using retrieval for stylistic examples may improve consistency without sacrificing relevance.
+For headline humor, adding controllable style constraints (brevity, factual anchor preservation, and a clearer punchline structure) and using retrieval for stylistic examples may improve consistency without sacrificing relevance. 
 
 \bibliographystyle{unsrt}
 
@@ -381,6 +380,14 @@ Due to the 7-page limit, we include additional plots and representative examples
   \includegraphics[width=\linewidth]{figures/score_distribution.png}
   \caption{Score distribution for rJokes dataset. Left: raw dataset (scores 0-9). Right: filtered dataset.}
   \label{fig:app_score_filtering}
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{figures/example_AI_jokes.png}
+  \caption{Example AI-generated jokes from our pipeline.}
+  \label{fig:app_example_jokes}
 \end{figure}
 
 \section{Technical Steps}
