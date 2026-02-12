@@ -198,7 +198,7 @@ Rather than prompting the model with a single instruction, we implement a three-
     \item \textbf{Final Joke}: Imagery candidates are combined with a pattern-specific prompt following a \textbf{Principle $\rightarrow$ Surprise} framework: the joke establishes a clear expectation and then subverts it logically but unexpectedly.
 \end{enumerate}
 
-The pipeline supports 15 humor patterns (puns, absurd logic, mini stories, sarcasm, deadpan, rule of three, literalism, etc.), each with a defined principle-surprise structure and style guide. The humour patterns are extracted from comedy textbooks and chosen at random by the model
+The pipeline supports 15 humor patterns (puns, absurd logic, mini stories, sarcasm, deadpan, rule of three, literalism, etc.), each with a defined principle-surprise structure and style guide. The humour patterns are extracted from comedy textbook \cite{comic_toolbox} and chosen at random by the model
 
 \subsection{Retrieval-Augmented Generation (RAG)}
 
@@ -273,8 +273,7 @@ Headline & 61 & 4.080 & 1.877 & [0.00, 6.42] \\
 
 \paragraph{Ranking alignment and source effects.}
 Under Mistral scoring, the Word-Inclusion rank-score correlation is weak (corr $\approx -0.05$), indicating the current rank ordering is not strongly aligned with the final metric.
-For the headline task, Mistral scores are relatively stable across generator sources (Table~\ref{tab:headline_source_mistral}), supporting the use of Mistral as a more comparable evaluator across generators.
-
+For the headline task, Mistral scores are relatively stable across generator sources (Table~\ref{tab:headline_source_mistral}), supporting the use of Mistral as a more comparable evaluator across generators. In appendix, we show examples of GPT evaluation bias on his generations.
 \begin{table}[H]
 \centering
 \small
@@ -291,7 +290,8 @@ Llama & 36 & 3.972 & 2.044 & 6.42 \\
 \label{tab:headline_source_mistral}
 \end{table}
 
-
+\paragraph{Human ratings}
+We also did some small example reviews of AI jokes. Lots feel the potential of joke generators, since AI is flexible and creative for image combinations. But the view of points are extreme different. Some feel most of jokes are funny, especially a joke from good two words constraint. Some feel lots of generations are too absurd to be funny, or even weird.  
 
 
 \section{Analysis and Discussion}
@@ -386,8 +386,15 @@ Due to the 7-page limit, we include additional plots and representative examples
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{figures/example_AI_jokes.png}
-  \caption{Example AI-generated jokes from our pipeline.}
+  \caption{Example of AI-generated jokes from our pipeline.}
   \label{fig:app_example_jokes}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{figures/example_GPT_evaluation_bias.png}
+  \caption{Example of GPT evaluation bias in evaluating jokes from different sources.}
+  \label{fig:app_example_GPT_bias}
 \end{figure}
 
 \section{Technical Steps}

@@ -32,6 +32,7 @@
 \newlabel{app:training_metrics}{{4..1}{3}{System Architecture Overview}{figure.0.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4..2}Fine-Tuned Llama 3 with QLoRA}{3}{subsection.0.4.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4..3}Chain-of-Thought Prompt Pipeline}{3}{subsection.0.4.3}\protected@file@percent }
+\citation{comic_toolbox}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4..4}Retrieval-Augmented Generation (RAG)}{4}{subsection.0.4.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4..5}GPT-OSS-120B Joke Generator}{4}{subsection.0.4.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4..6}Dual Evaluation System}{4}{subsection.0.4.6}\protected@file@percent }
@@ -50,13 +51,14 @@
 \@writefile{toc}{\contentsline {paragraph}{Ranking alignment and source effects.}{6}{table.0.2}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Headline task: Mistral scores (0--10) by generator source.}}{6}{table.0.3}\protected@file@percent }
 \newlabel{tab:headline_source_mistral}{{3}{6}{Headline task: Mistral scores (0--10) by generator source}{table.0.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{Human ratings}{6}{table.0.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {7.}Analysis and Discussion}{6}{section.0.7}\protected@file@percent }
 \newlabel{sec:analysis_discussion}{{7.}{6}{Analysis and Discussion}{section.0.7}{}}
 \@writefile{toc}{\contentsline {paragraph}{Key observations.}{6}{section.0.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Failure modes (lightweight manual inspection).}{6}{section.0.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Evaluator bias and metric choice.}{6}{section.0.7}\protected@file@percent }
 \bibstyle{unsrt}
 \bibdata{references}
+\@writefile{toc}{\contentsline {paragraph}{Evaluator bias and metric choice.}{7}{section.0.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Implications.}{7}{section.0.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {8.}Conclusion}{7}{section.0.8}\protected@file@percent }
 \newlabel{sec:conclusion}{{8.}{7}{Conclusion}{section.0.8}{}}
@@ -65,35 +67,52 @@
 \@writefile{toc}{\contentsline {paragraph}{Align reranking with the final metric.}{7}{section.0.9}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{More reliable evaluation.}{7}{section.0.9}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Task-specific improvements for headlines.}{7}{section.0.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{Appendix}{8}{section.0.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {1.}Additional Figures and Example Outputs}{8}{section.Alph0.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Mistral-only results overview: (a) Word-Inclusion score distribution, (b) Word-Inclusion score vs. rank, (c) Headline score distribution, (d) Headline score by generator source.}}{8}{figure.Alph0.2}\protected@file@percent }
-\newlabel{fig:app_overview}{{2}{8}{Mistral-only results overview: (a) Word-Inclusion score distribution, (b) Word-Inclusion score vs. rank, (c) Headline score distribution, (d) Headline score by generator source}{figure.Alph0.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Dataset comparison across sources: token/character distributions and representative vocabulary statistics.}}{9}{figure.Alph0.3}\protected@file@percent }
-\newlabel{fig:app_dataset_comparison}{{3}{9}{Dataset comparison across sources: token/character distributions and representative vocabulary statistics}{figure.Alph0.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Humor rating distribution in the HaHackathon dataset (0-4 continuous scale).}}{9}{figure.Alph0.4}\protected@file@percent }
-\newlabel{fig:app_humor_rating}{{4}{9}{Humor rating distribution in the HaHackathon dataset (0-4 continuous scale)}{figure.Alph0.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Score distribution for rJokes dataset. Left: raw dataset (scores 0-9). Right: filtered dataset.}}{10}{figure.Alph0.5}\protected@file@percent }
-\newlabel{fig:app_score_filtering}{{5}{10}{Score distribution for rJokes dataset. Left: raw dataset (scores 0-9). Right: filtered dataset}{figure.Alph0.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Example AI-generated jokes from our pipeline.}}{10}{figure.Alph0.6}\protected@file@percent }
-\newlabel{fig:app_example_jokes}{{6}{10}{Example AI-generated jokes from our pipeline}{figure.Alph0.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.}Technical Steps}{10}{section.Alph0.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2..1}Checkpoint selection}{10}{subsection.Alph0.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Mistral (evaluator).}{10}{subsection.Alph0.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Ministral-3-8B (evaluator).}{11}{subsection.Alph0.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2..2}Evaluation metrics}{11}{subsection.Alph0.2.2}\protected@file@percent }
-\newlabel{app:metrics}{{2..2}{11}{Evaluation metrics}{subsection.Alph0.2.2}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Classification metrics}{11}{subsection.Alph0.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Regression metrics}{11}{subsection.Alph0.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2..3}Learning curves}{11}{subsection.Alph0.2.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces llama learning curves with training loss and validation metrics to find the optimal model weight}}{11}{figure.Alph0.7}\protected@file@percent }
-\newlabel{fig:app_score_filtering}{{7}{11}{llama learning curves with training loss and validation metrics to find the optimal model weight}{figure.Alph0.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces mistral learning curves with training loss and validation metrics to find the optimal model weigh }}{12}{figure.Alph0.8}\protected@file@percent }
-\newlabel{fig:app_score_filtering}{{8}{12}{mistral learning curves with training loss and validation metrics to find the optimal model weigh}{figure.Alph0.8}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2..4}Fine-tuning Configuration}{12}{subsection.Alph0.2.4}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Llama-3-8B LoRA SFT configuration.}}{12}{table.Alph0.4}\protected@file@percent }
-\newlabel{tab:llama_sft_cfg}{{4}{12}{Llama-3-8B LoRA SFT configuration}{table.Alph0.4}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Ministral3 multi-task fine-tuning LoRA Configuration for }}{13}{table.Alph0.5}\protected@file@percent }
-\newlabel{tab:lora-config}{{5}{13}{Ministral3 multi-task fine-tuning LoRA Configuration for}{table.Alph0.5}{}}
+\bibcite{binsted1994implemented}{1}
+\bibcite{stock2003hahacronym}{2}
+\bibcite{su2025survey}{3}
+\bibcite{mittal2022ambipun}{4}
+\bibcite{toplyn2023witscript}{5}
+\bibcite{vikhorev2024cleancomedy}{6}
+\bibcite{hu2022lora}{7}
+\bibcite{dettmers2023qlora}{8}
+\bibcite{NEURIPS2020_6b493230}{9}
+\bibcite{carbonell}{10}
+\bibcite{fu2023gptscoreevaluatedesire}{11}
+\bibcite{liu2023gevalnlgevaluationusing}{12}
+\bibcite{sakabe2025assessingcapabilitiesllmshumora}{13}
+\bibcite{meaney-etal-2021-semeval}{14}
+\bibcite{comic_toolbox}{15}
+\@writefile{toc}{\contentsline {section}{Appendix}{10}{chapter*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.}Additional Figures and Example Outputs}{10}{section.Alph0.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Mistral-only results overview: (a) Word-Inclusion score distribution, (b) Word-Inclusion score vs. rank, (c) Headline score distribution, (d) Headline score by generator source.}}{10}{figure.Alph0.2}\protected@file@percent }
+\newlabel{fig:app_overview}{{2}{10}{Mistral-only results overview: (a) Word-Inclusion score distribution, (b) Word-Inclusion score vs. rank, (c) Headline score distribution, (d) Headline score by generator source}{figure.Alph0.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Dataset comparison across sources: token/character distributions and representative vocabulary statistics.}}{11}{figure.Alph0.3}\protected@file@percent }
+\newlabel{fig:app_dataset_comparison}{{3}{11}{Dataset comparison across sources: token/character distributions and representative vocabulary statistics}{figure.Alph0.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Humor rating distribution in the HaHackathon dataset (0-4 continuous scale).}}{11}{figure.Alph0.4}\protected@file@percent }
+\newlabel{fig:app_humor_rating}{{4}{11}{Humor rating distribution in the HaHackathon dataset (0-4 continuous scale)}{figure.Alph0.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Score distribution for rJokes dataset. Left: raw dataset (scores 0-9). Right: filtered dataset.}}{12}{figure.Alph0.5}\protected@file@percent }
+\newlabel{fig:app_score_filtering}{{5}{12}{Score distribution for rJokes dataset. Left: raw dataset (scores 0-9). Right: filtered dataset}{figure.Alph0.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Example of AI-generated jokes from our pipeline.}}{12}{figure.Alph0.6}\protected@file@percent }
+\newlabel{fig:app_example_jokes}{{6}{12}{Example of AI-generated jokes from our pipeline}{figure.Alph0.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Example of GPT evaluation bias in evaluating jokes from different sources.}}{13}{figure.Alph0.7}\protected@file@percent }
+\newlabel{fig:app_example_GPT_bias}{{7}{13}{Example of GPT evaluation bias in evaluating jokes from different sources}{figure.Alph0.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.}Technical Steps}{13}{section.Alph0.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2..1}Checkpoint selection}{13}{subsection.Alph0.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Mistral (evaluator).}{13}{subsection.Alph0.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Ministral-3-8B (evaluator).}{13}{subsection.Alph0.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2..2}Evaluation metrics}{14}{subsection.Alph0.2.2}\protected@file@percent }
+\newlabel{app:metrics}{{2..2}{14}{Evaluation metrics}{subsection.Alph0.2.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Classification metrics}{14}{subsection.Alph0.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Regression metrics}{14}{subsection.Alph0.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2..3}Learning curves}{14}{subsection.Alph0.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces llama learning curves with training loss and validation metrics to find the optimal model weight}}{14}{figure.Alph0.8}\protected@file@percent }
+\newlabel{fig:app_score_filtering}{{8}{14}{llama learning curves with training loss and validation metrics to find the optimal model weight}{figure.Alph0.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces mistral learning curves with training loss and validation metrics to find the optimal model weigh }}{15}{figure.Alph0.9}\protected@file@percent }
+\newlabel{fig:app_score_filtering}{{9}{15}{mistral learning curves with training loss and validation metrics to find the optimal model weigh}{figure.Alph0.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2..4}Fine-tuning Configuration}{15}{subsection.Alph0.2.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Llama-3-8B LoRA SFT configuration.}}{15}{table.Alph0.4}\protected@file@percent }
+\newlabel{tab:llama_sft_cfg}{{4}{15}{Llama-3-8B LoRA SFT configuration}{table.Alph0.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Ministral3 multi-task fine-tuning LoRA Configuration for }}{16}{table.Alph0.5}\protected@file@percent }
+\newlabel{tab:lora-config}{{5}{16}{Ministral3 multi-task fine-tuning LoRA Configuration for}{table.Alph0.5}{}}
 \gdef\svg@ink@ver@settings{{\m@ne }{inkscape}{\m@ne }}
-\gdef \@abspage@last{14}
+\gdef \@abspage@last{17}

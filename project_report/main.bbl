@@ -1,0 +1,98 @@
+\begin{thebibliography}{10}
+
+\bibitem{binsted1994implemented}
+Kim Binsted and Graeme Ritchie.
+\newblock An implemented model of punning riddles.
+\newblock In {\em Proceedings of the Twelfth National Conference on Artificial
+  Intelligence (AAAI-94)}, pages 1--6. AAAI Press, 1994.
+
+\bibitem{stock2003hahacronym}
+Oliviero Stock and Carlo Strapparava.
+\newblock Hahacronym: Humorous agents for humorous acronyms.
+\newblock {\em Humor: International Journal of Humor Research}, 16(3):297--314,
+  2003.
+
+\bibitem{su2025survey}
+Yuchen Su, Yonghua Zhu, Ruofan Wang, Zijian Huang, Diana Benavides-Prado, and
+  Michael Witbrock.
+\newblock A survey of pun generation: Datasets, evaluations and methodologies.
+\newblock {\em Findings of the Association for Computational Linguistics: EMNLP
+  2025}, pages 7375--7395, 2025.
+
+\bibitem{mittal2022ambipun}
+Anirudh Mittal, Yufei Tian, and Nanyun Peng.
+\newblock Ambipun: Generating humorous puns with ambiguous context.
+\newblock In {\em Proceedings of the 2022 Conference of the North American
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies}, pages 1053--1062. Association for Computational Linguistics,
+  2022.
+
+\bibitem{toplyn2023witscript}
+Joe Toplyn.
+\newblock Witscript 3: A hybrid ai system for improvising jokes in a
+  conversation.
+\newblock {\em arXiv preprint arXiv:2301.02695}, 2023.
+
+\bibitem{vikhorev2024cleancomedy}
+Dmitry Vikhorev, Daria Galimzianova, Svetlana Gorovaia, Elizaveta Zhemchuzhina,
+  and Ivan~P Yamshchikov.
+\newblock Cleancomedy: Creating friendly humor through generative techniques.
+\newblock {\em arXiv preprint arXiv:2412.09203}, 2024.
+
+\bibitem{hu2022lora}
+Edward~J Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean
+  Wang, Lu~Wang, Weizhu Chen, et~al.
+\newblock Lora: Low-rank adaptation of large language models.
+\newblock {\em ICLR}, 1(2):3, 2022.
+
+\bibitem{dettmers2023qlora}
+Tim Dettmers, Artidoro Pagnoni, Ari Holtzman, and Luke Zettlemoyer.
+\newblock Qlora: Efficient finetuning of quantized llms.
+\newblock {\em Advances in neural information processing systems},
+  36:10088--10115, 2023.
+
+\bibitem{NEURIPS2020_6b493230}
+Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir
+  Karpukhin, Naman Goyal, Heinrich K\"{u}ttler, Mike Lewis, Wen-tau Yih, Tim
+  Rockt\"{a}schel, Sebastian Riedel, and Douwe Kiela.
+\newblock Retrieval-augmented generation for knowledge-intensive nlp tasks.
+\newblock In H.~Larochelle, M.~Ranzato, R.~Hadsell, M.F. Balcan, and H.~Lin,
+  editors, {\em Advances in Neural Information Processing Systems}, volume~33,
+  pages 9459--9474. Curran Associates, Inc., 2020.
+
+\bibitem{carbonell}
+Jaime Carbonell and Jade Goldstein.
+\newblock The use of mmr, diversity-based reranking for reordering documents
+  and producing summaries.
+\newblock In {\em Proceedings of the 21st Annual International ACM SIGIR
+  Conference on Research and Development in Information Retrieval}, SIGIR '98,
+  page 335–336, New York, NY, USA, 1998. Association for Computing Machinery.
+
+\bibitem{fu2023gptscoreevaluatedesire}
+Jinlan Fu, See-Kiong Ng, Zhengbao Jiang, and Pengfei Liu.
+\newblock Gptscore: Evaluate as you desire, 2023.
+
+\bibitem{liu2023gevalnlgevaluationusing}
+Yang Liu, Dan Iter, Yichong Xu, Shuohang Wang, Ruochen Xu, and Chenguang Zhu.
+\newblock G-eval: Nlg evaluation using gpt-4 with better human alignment, 2023.
+
+\bibitem{sakabe2025assessingcapabilitiesllmshumora}
+Ritsu Sakabe, Hwichan Kim, Tosho Hirasawa, and Mamoru Komachi.
+\newblock Assessing the capabilities of llms in humor:a multi-dimensional
+  analysis of oogiri generation and evaluation, 2025.
+
+\bibitem{meaney-etal-2021-semeval}
+J.~A. Meaney, Steven Wilson, Luis Chiruzzo, Adam Lopez, and Walid Magdy.
+\newblock {S}em{E}val 2021 task 7: {H}a{H}ackathon, detecting and rating humor
+  and offense.
+\newblock In Alexis Palmer, Nathan Schneider, Natalie Schluter, Guy Emerson,
+  Aurelie Herbelot, and Xiaodan Zhu, editors, {\em Proceedings of the 15th
+  International Workshop on Semantic Evaluation (SemEval-2021)}, pages
+  105--119, Online, August 2021. Association for Computational Linguistics.
+
+\bibitem{comic_toolbox}
+John Vorhaus.
+\newblock The comic toolbox: How to be funny even if you're not.
+\newblock 1994.
+
+\end{thebibliography}
