@@ -249,11 +249,11 @@ Both Llama and Mistral fine-tuning, as well as all inference, were run locally o
 \paragraph{Metrics.}
 We report results using a fine-tuned Mistral evaluator (raw scale \([0,4]\)), linearly normalized to \([0,10]\).
 Due to potential self-preference bias when using GPT as both generator and evaluator, GPT-based scoring is treated only as an auxiliary bias check and is not used for final reporting.
-Figures and example jokes are deferred to the Appendix due to the 7-page limit.
+Figures and example jokes are deferred to the Appendix due to the 7-page limit. No
 
 \paragraph{Overall performance (Mistral-only).}
 Table~\ref{tab:mistral_overall} summarizes overall results.
-Word-Inclusion achieves a mean score of 5.29 over 198 candidates, while Headline humor is lower on average (mean 4.08 over 61 samples), suggesting the headline setting is more challenging.
+Word-Inclusion achieves a mean score of 5.29 over 198 candidates, while Headline humor is lower on average (mean 4.08 over 61 samples), since we add the classification gate for Headline tasks in case of plain text generations from headline. After the classification fate of Mistral, it direct give 0 to output, regardless of regression score.
 
 \begin{table}[H]
 \centering
@@ -333,6 +333,9 @@ Overall, our results indicate that candidate diversification is necessary for co
 
 \paragraph{Align reranking with the final metric.}
 Since rank-score alignment is weak under the adopted Mistral evaluator, a direct next step is to rerank candidates using the same scoring signal (or train a lightweight reranker to predict the Mistral preference), rather than relying on mismatched or mixed scoring criteria.
+
+\paragraph{Try different AI model and fintuning methods.}
+SInce the quick development of AI models, we should try different models for generation and evaluation to see if the results are better. And the fintuning process can be more optimited by more high quality datas.
 
 \paragraph{More reliable evaluation.}
 Automatic humor evaluation is inherently noisy and can be biased.
@@ -508,6 +511,151 @@ dataloader\_num\_workers & 4 \\
 \end{tabular}
 \end{table}
 
+\subsection{Prompt Template}
+\label{app:prompt-template}
+
+The CoT prompt pipeline (Section 4.3) uses three sequential prompts.
+Placeholders are shown in braces.
+
+\paragraph{Step 1 -- Associations.}
+\begin{quote}\small\ttfamily
+Task: Step 1 (Associations).\\
+Input: \{text\}\\[4pt]
+You are very creative and can quickly think of many different related ideas.
+Generate exactly 10 associations for the input.
+Mix: objects, emotions, places, actions, metaphors, social situations.
+Keep it SAFE and neutral (no hate, no slurs, no sexual content).\\[4pt]
+Output format (exact):\\
+1) \ldots\ \ 2) \ldots\ \ \ldots\ \ 10) \ldots
+\end{quote}
+
+\noindent\textit{Parameters:} temperature\,=\,0.7, max\_tokens\,=\,200.
+
+\paragraph{Step 2 -- Imagery.}
+\begin{quote}\small\ttfamily
+Task: Step 2 (Positive / implicit imagery).\\
+Input: \{text\}\\[4pt]
+Associations:\\
+\{output from Step 1\}\\[4pt]
+You are a funny story teller who can turn ideas into vivid mental images.
+Rewrite each association into a short vivid image / humorous picture language.
+Keep it positive/implicit (no insults, no cruelty).
+Keep each item <= 12 words.\\[4pt]
+Output format (exact):\\
+1) \ldots\ \ 2) \ldots\ \ \ldots\ \ 10) \ldots
+\end{quote}
+
+\noindent\textit{Parameters:} temperature\,=\,0.8, max\_tokens\,=\,250.
+
+\paragraph{Step 3 -- Final Joke.}
+\begin{quote}\small\ttfamily
+You are a professional comedy writer.\\[4pt]
+Joke style: \{pattern\}\\
+Style guide: \{pattern-specific style guide, see Table~\ref{tab:pattern_styles}\}\\[4pt]
+Core humor rule (must apply):\\
+-- TRUTH first: a relatable observation.\\
+-- PRINCIPLE -> SURPRISE:\\
+\quad PRINCIPLE = expected rule/interpretation.\\
+\quad SURPRISE = twist that breaks expectation but still connects logically.\\
+-- Punchline must be last.\\[4pt]
+Input: \{text\}\\[4pt]
+\{Optional: RAG inspiration examples\}\\[4pt]
+Imagery candidates:\\
+\{output from Step 2\}\\[4pt]
+Constraints:\\
+-- If input is a headline, write a humorous comment or punchline
+   (not a parody of the headline).\\
+-- If input is two words, use both naturally in your joke.\\[4pt]
+Task:\\
+-- Follow the constraints strictly.\\
+-- Build 1 joke (1--10 sentences).\\
+-- Choose at least 3 imagery items from the list mentally.\\[4pt]
+Writing Instructions:\\
+-- Be specific, not generic --- concrete details increase funniness.\\
+-- Avoid clich\'{e}s and generic templates like ``Why did \ldots''.\\
+-- No explanation, no labels.\\[4pt]
+Output format (exact):\\
+-- Output only the joke text.
+\end{quote}
+
+\noindent\textit{Parameters:} temperature\,=\,0.9, max\_tokens\,=\,200.
+
+\paragraph{Pattern-specific style guides.}
+Table~\ref{tab:pattern_styles} lists all 15 humor patterns with their Principle\,$\rightarrow$\,Surprise definitions and the style-guide string injected into the Step~3 prompt.
+
+\begin{table}[H]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Humor patterns and their style-guide prompts used in Step 3.}
+\label{tab:pattern_styles}
+\begin{tabular}{p{3.2cm} p{3.8cm} p{3.8cm} p{4cm}}
+\hline
+\textbf{Pattern} & \textbf{Principle} & \textbf{Surprise} & \textbf{Style Guide Prompt} \\
+\hline
+Pun (re-interpretation)
+  & Sentence implies Meaning~A
+  & Final word forces Meaning~B
+  & Write a 1--2 line pun. First line implies meaning~A. Final word forces meaning~B. No explanation. \\[3pt]
+Absurd Logic
+  & Define a bizarre but consistent world rule
+  & Apply it to a normal situation seriously
+  & Create a joke in a world with one weird rule. Dead-serious tone. End on the consequence. \\[3pt]
+Mini Story
+  & Clear situation with a believable goal
+  & Unexpected constraint; snap ending
+  & Tell a 2--3 sentence micro-story. Setup $\rightarrow$ turn $\rightarrow$ punch. \\[3pt]
+Sarcasm
+  & Audience sees the true (bad) evaluation
+  & Speaker says the polite opposite
+  & Write one sarcastic line about a clearly bad situation. Add one small specific detail. \\[3pt]
+Deadpan
+  & Normal statement structure and calm voice
+  & Content is ridiculous
+  & Deliver an absurd fact in a completely serious tone. Add a calm practical follow-up. \\[3pt]
+Mock Breaking News
+  & Serious ``breaking news'' format
+  & Trivial or absurd event
+  & Write a breaking news alert about something ridiculous. Include one ``official statement''. \\[3pt]
+Fake Expert
+  & Professional-sounding explanation
+  & Logic is obviously wrong
+  & Explain a normal thing with fake expertise and invented terms. Ridiculous confident conclusion. \\[3pt]
+Exaggeration
+  & Believable complaint or claim
+  & Escalate beyond reason in 2--3 steps
+  & Write a 3-beat escalation: normal $\rightarrow$ bigger $\rightarrow$ absurd. End on the biggest beat. \\[3pt]
+Understatement
+  & Big dramatic event is implied
+  & Reaction is comically small
+  & Describe a big dramatic problem. Respond with a tiny polite reaction. 1--2 lines. \\[3pt]
+Rule of Three
+  & Two beats establish a pattern
+  & Third beat breaks the pattern
+  & Write a rule-of-three joke: A, A, then twist. First two parallel, third surprising. \\[3pt]
+Literalism
+  & Common idiom/metaphor
+  & Interpreted literally
+  & Take a common idiom literally. Show the literal action and its consequence. \\[3pt]
+Status Reversal
+  & Clear hierarchy (e.g.\ boss/employee)
+  & Flip who has control
+  & Set up a clear hierarchy, then flip it. End with the line that proves the reversal. \\[3pt]
+Irony
+  & Clear expectation about outcome
+  & Opposite outcome revealed
+  & Set up a clear expectation, then reveal the ironic opposite. End on the strongest contrast. \\[3pt]
+Observational
+  & Universally relatable truth
+  & Unexpected angle or exaggeration
+  & Start with a relatable observation. Twist with an unexpected angle or absurd conclusion. \\[3pt]
+Self-aware (meta)
+  & Acknowledge joke-telling format
+  & Break the fourth wall
+  & Tell a joke that acknowledges it's a joke. Comment on your own setup or punchline structure. \\
+\hline
+\end{tabular}
+\end{table}
 
 
 \end{document}
