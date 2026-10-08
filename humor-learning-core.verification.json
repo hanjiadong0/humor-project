@@ -1,0 +1,11 @@
+{
+  "status": "VERIFIED_ALL_RETAINED_CONTENTS",
+  "source": "C:\\Dev\\repos\\humor-project",
+  "archive": "C:\\Dev\\worktrees\\cs-foundations-catchup\\work\\learning-archives-20261008\\github-learning\\humor\\humor-learning-core.zip",
+  "files": 180,
+  "retained_original_bytes": 6745341,
+  "archive_bytes": 4134359,
+  "saved_bytes": 2610982,
+  "skipped_links": [],
+  "verified_utc": "2026-10-08T22:14:21Z"
+}

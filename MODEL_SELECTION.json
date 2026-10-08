@@ -1,0 +1,54 @@
+{
+  "source_head": "2b5f00ba28e49269ed85987ba9983f26323f5a4e",
+  "runtime_validation": "No evaluation or inference was run for this archive.",
+  "mistral": {
+    "checkpoint": 600,
+    "recorded_metrics": {
+      "eval_loss": 1.1489671468734741,
+      "eval_reg_rmse": 0.8919582686996045,
+      "eval_reg_r2": 0.7084115727056317
+    },
+    "selection": "Lowest validation loss and RMSE, and highest regression R2 among 27 recorded evaluation entries.",
+    "official_best_model_checkpoint": null,
+    "retained_head_metadata": [
+      "cls_head",
+      "reg_head"
+    ],
+    "status": "Metadata-complete candidate; adapter header contains classification and regression head tensors. Runtime inference is unverified.",
+    "base_model": "mistralai/Ministral-3-8B-Base-2512",
+    "base_reference_source": [
+      "src/evaluation/mistral_model/finetune_mistral3.ipynb",
+      "src/humor_classifier/finetune_MIstral3.ipynb",
+      "src/evaluation/mistral_evaluator.py"
+    ],
+    "base_reference_limit": "adapter_config.json base_model_name_or_path is null. The identifier comes from current source, so exact training revision cannot be established from the adapter metadata.",
+    "omitted_metric_winners": [
+      {
+        "checkpoint": 1000,
+        "eval_cls_f1": 0.9203310117961502,
+        "reason": "Classification F1 winner, but saved adapter lacks cls_head/reg_head tensors."
+      },
+      {
+        "checkpoint": 5400,
+        "eval_reg_mae": 0.6172685472667218,
+        "reason": "Regression MAE winner, but saved adapter lacks cls_head/reg_head tensors."
+      }
+    ]
+  },
+  "llama": {
+    "checkpoint": 2300,
+    "base_model": "meta-llama/Meta-Llama-3-8B-Instruct",
+    "base_reference_source": "checkpoint-2300/adapter_config.json",
+    "selection": "Latest trainer state names checkpoint-2300 as best_model_checkpoint.",
+    "checkpoint_2300_eval_loss": 0.6988921165466309,
+    "latest_state_best_metric": 0.6935681700706482,
+    "limit": "The best metric corresponds to evaluation step 2350, whose checkpoint is absent. Preserve the recorded saved best at 2300; do not claim that its own loss equals the global minimum."
+  },
+  "payload_exclusions": [
+    "optimizer.pt",
+    "scheduler.pt",
+    "rng_state.pth",
+    "training_args.bin"
+  ],
+  "local_only": "Full Git history, raw datasets, private configuration, other weights and unverified final exports remain in the separate local safety archive."
+}

@@ -1,0 +1,10 @@
+*
+!/.gitignore
+!/.gitattributes
+!/README.md
+!/MODEL_SELECTION.json
+!/PACKAGE_SCAN.json
+!/humor-learning-core.verification.json
+!/SHA256SUMS.txt
+!/VERIFICATION.json
+!/humor-learning-core.zip

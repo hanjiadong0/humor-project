@@ -1,0 +1,51 @@
+{
+  "scanned_retained_source_files": 143,
+  "redactions": [
+    {
+      "path": "src/evaluation/GPT_joke_evaluator.ipynb",
+      "types": [
+        "literal_credential"
+      ],
+      "distinct_values": 1,
+      "action": "redacted_copy"
+    }
+  ],
+  "excluded_private_names_and_generated_files": [
+    ".env",
+    ".env.example",
+    "data/humor_RAG_data_20000_RAG.jsonl",
+    "data/humor_training_data_25000.jsonl",
+    "data/humor_training_data_5000_Train.jsonl",
+    "data/labeled_data/detection_dataset.csv",
+    "data/labeled_data/hahackathon_train.csv",
+    "data/labeled_data/reddit_full_data.csv",
+    "data/task-a-en.tsv",
+    "nul",
+    "src/data-analysis/.git",
+    "src/data-analysis/eda_out_2/dv_clean.csv",
+    "src/data-analysis/eda_out_2/dv_with_buckets.csv",
+    "src/data-analysis/outputs/hahackathon/aux_rows_missing_humor_rating.csv",
+    "src/data-analysis/outputs/hahackathon/dv_clean.csv",
+    "src/data-analysis/outputs/hahackathon/dv_with_buckets.csv",
+    "src/data-analysis/outputs/hahackathon/train_detector.csv",
+    "src/data-analysis/outputs/hahackathon/train_multitask.csv",
+    "src/data-analysis/outputs/hahackathon/train_scorer.csv",
+    "src/data-analysis/reddit_summary/humor_RAG_data_20000_RAG_dedupByAnswer/bad_samples.jsonl",
+    "src/data-analysis/reddit_summary/humor_RAG_data_20000_RAG_dedupByAnswer/rag_corpus.jsonl",
+    "src/data-analysis/reddit_summary/humor_RAG_data_20000_RAG_dedupByAnswer/sft_pairs.jsonl",
+    "src/data-analysis/reddit_summary/humor_training_data_5000_Train_dedupByAnswer/bad_samples.jsonl",
+    "src/data-analysis/reddit_summary/humor_training_data_5000_Train_dedupByAnswer/rag_corpus.jsonl",
+    "src/data-analysis/reddit_summary/humor_training_data_5000_Train_dedupByAnswer/sft_pairs.jsonl",
+    "src/data-analysis/reddit_summary/outputs/hahackathon/aux_rows_missing_humor_rating.csv",
+    "src/data-analysis/reddit_summary/outputs/hahackathon/dv_clean.csv",
+    "src/data-analysis/reddit_summary/outputs/hahackathon/dv_with_buckets.csv",
+    "src/data-analysis/reddit_summary/outputs/hahackathon/train_detector.csv",
+    "src/data-analysis/reddit_summary/outputs/hahackathon/train_multitask.csv",
+    "src/data-analysis/reddit_summary/outputs/hahackathon/train_scorer.csv",
+    "src/evaluation/GPT_joke_evaluator.ipynb",
+    "src/evaluation/mistral_model/MIstral_Fintuning_evaluator.zip",
+    "src/generation/rag_index/faiss.index",
+    "src/generation/rag_index/jokes_data.pkl"
+  ],
+  "private_original_values_printed": false
+}

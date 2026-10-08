@@ -1,0 +1,3 @@
+b015374aac0cf3fe81bf68a137d7526a5ccf99823198f551678b7c9679028f6e  humor-learning-core.zip
+7f78141afefdaa73f8dea2e2cfd6acacbe4e3b1a549da6e8ca95e168073d1d11  humor-mistral-checkpoint-600.zip
+982af3fbde5602da1cb4af2ebd296975173a026daa22c734d646bc598ade2b95  humor-llama-checkpoint-2300.zip
