@@ -23,5 +23,9 @@ outputs/
 *.npy
 
 
-
+.venv/
+.venv-wsl/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
 

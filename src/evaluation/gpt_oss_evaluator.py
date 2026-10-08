@@ -78,13 +78,18 @@ Your overall score should reflect the joke's total comedic quality, weighing all
 
         Args:
             joke: The joke to evaluate
-            word1: First word in the pair
-            word2: Second word in the pair
+            word1: First word in the pair (or headline text if word2 is empty)
+            word2: Second word in the pair (empty string for headline mode)
 
         Returns:
             Formatted prompt string
         """
-        prompt = f"""Evaluate this joke that was created using the word pair: "{word1}" and "{word2}"
+        if word2:
+            context_line = f'Evaluate this joke that was created using the word pair: "{word1}" and "{word2}"'
+        else:
+            context_line = f'Evaluate this joke that was created as commentary on the headline: "{word1}"'
+
+        prompt = f"""{context_line}
 
 JOKE TO EVALUATE:
 "{joke}"
@@ -264,6 +269,54 @@ Be critical but fair. Reserve scores above 8.0 for truly exceptional jokes."""
             'justification': 'Unable to parse response, using default scores'
         }
 
+    def _build_batch_scoring_prompt(self, jokes: List[str], word1: str, word2: str) -> str:
+        """Build a single prompt that scores all jokes at once."""
+        jokes_block = ""
+        for i, joke in enumerate(jokes, 1):
+            jokes_block += f'\nJOKE {i}:\n"{joke}"\n'
+
+        if word2:
+            context_line = f'Evaluate each of the following {len(jokes)} jokes created using the word pair: "{word1}" and "{word2}"'
+        else:
+            context_line = f'Evaluate each of the following {len(jokes)} jokes created as commentary on the headline: "{word1}"'
+
+        return f"""{context_line}
+
+{jokes_block}
+TASK:
+For EACH joke, provide an overall score (1-10, decimals allowed) using these weights:
+- Creativity & Originality: 25%
+- Word Integration: 20%
+- Humor Impact: 30%
+- Structure & Flow: 15%
+- Cleverness: 10%
+
+Be critical but fair. Reserve scores above 8.0 for truly exceptional jokes.
+
+Respond ONLY with a valid JSON array of exactly {len(jokes)} objects, one per joke, in order:
+[
+  {{"joke_number": 1, "overall_score": <score>}},
+  {{"joke_number": 2, "overall_score": <score>}},
+  ...
+]"""
+
+    def _parse_batch_response(self, content: str, num_jokes: int) -> List[float]:
+        """Parse batch scoring response. Returns list of scores or None on failure."""
+        try:
+            arr_start = content.find('[')
+            arr_end = content.rfind(']') + 1
+            if arr_start != -1 and arr_end > arr_start:
+                arr = json.loads(content[arr_start:arr_end])
+                if isinstance(arr, list) and len(arr) == num_jokes:
+                    scores = []
+                    for item in arr:
+                        s = float(item.get('overall_score', item.get('score', 5.0)))
+                        scores.append(max(1.0, min(10.0, s)))
+                    return scores
+        except (json.JSONDecodeError, ValueError, KeyError, TypeError, AttributeError):
+            pass
+        return None
+
     def score_jokes(
         self,
         jokes: List[str],
@@ -272,7 +325,8 @@ Be critical but fair. Reserve scores above 8.0 for truly exceptional jokes."""
         verbose: bool = False
     ) -> List[float]:
         """
-        Score multiple jokes.
+        Score multiple jokes in a single API call (batch mode).
+        Falls back to per-joke scoring if batch parsing fails.
 
         Args:
             jokes: List of jokes to evaluate
@@ -283,21 +337,41 @@ Be critical but fair. Reserve scores above 8.0 for truly exceptional jokes."""
         Returns:
             List of overall scores (1-10 scale)
         """
+        if not jokes:
+            return []
+
+        # Try batch scoring (1 API call for all jokes)
+        batch_prompt = self._build_batch_scoring_prompt(jokes, word1, word2)
+        for attempt in range(self.max_retries):
+            try:
+                completion = self.client.chat.completions.create(
+                    model=self.model,
+                    messages=[
+                        {"role": "system", "content": self.system_prompt},
+                        {"role": "user", "content": batch_prompt}
+                    ],
+                    temperature=self.temperature,
+                    max_tokens=2048,
+                    stream=False
+                )
+                response = completion.choices[0].message.content
+                scores = self._parse_batch_response(response, len(jokes))
+                if scores is not None:
+                    if verbose:
+                        for i, (joke, score) in enumerate(zip(jokes, scores), 1):
+                            print(f"  [{i}] {score:.1f}/10 - {joke[:60]}...")
+                    return scores
+            except Exception as e:
+                if verbose:
+                    print(f"  Batch attempt {attempt + 1} failed: {e}")
+
+        # Fallback: score one by one
+        if verbose:
+            print("  Batch scoring failed, falling back to per-joke scoring...")
         scores = []
-
-        for i, joke in enumerate(jokes, 1):
-            if verbose:
-                print(f"\n{'='*80}")
-                print(f"Scoring Joke {i}/{len(jokes)}")
-                print(f"{'='*80}")
-                print(f"Joke: {joke}")
-
+        for joke in jokes:
             score = self.score_joke(joke, word1, word2, verbose=verbose)
             scores.append(score)
-
-            if verbose:
-                print(f"✅ Final Score: {score}/10")
-
         return scores
 
     def score_with_details(

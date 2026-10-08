@@ -63,16 +63,19 @@ Your goal is to find the most creative, unexpected, yet logical connections betw
     def _build_user_prompt(self, word1: str, word2: str, num_jokes: int = 10) -> str:
         """
         Constructs the user prompt for joke generation.
+        Supports both word-pair mode and headline mode (word2="").
 
         Args:
-            word1: First word in the pair
-            word2: Second word in the pair
+            word1: First word (or headline text if word2 is empty)
+            word2: Second word (empty string for headline mode)
             num_jokes: Number of jokes to generate
 
         Returns:
             Formatted prompt string
         """
-        prompt = f"""Generate {num_jokes} creative, hilarious jokes that cleverly connect these two words:
+        if word2:
+            # Word-pair mode
+            prompt = f"""Generate {num_jokes} creative, hilarious jokes that cleverly connect these two words:
 
 Word 1: {word1}
 Word 2: {word2}
@@ -95,6 +98,27 @@ Think creatively about:
 - What professions, situations, or scenarios could involve both?
 - What absurd scenarios would require both items?
 - What puns or wordplay connect these concepts?
+
+Format your response as a valid JSON object with a "jokes" key containing an array of strings:
+{{"jokes": ["joke 1", "joke 2", "joke 3", ...]}}
+
+Generate {num_jokes} unique, creative jokes now:"""
+        else:
+            # Headline mode
+            prompt = f"""Generate {num_jokes} creative, hilarious jokes or humorous comments about this headline:
+
+HEADLINE: "{word1}"
+
+Requirements:
+1. Write funny reactions, commentary, or punchlines inspired by the headline
+2. Do NOT just rephrase the headline - add a comedic twist
+3. Explore DIFFERENT comedic approaches:
+   - Some should be witty one-liner reactions
+   - Some should be absurdist takes on the situation
+   - Some should be observational commentary
+   - Some should use wordplay on key words in the headline
+4. Keep jokes concise (1-3 sentences each)
+5. Ensure all jokes are appropriate and family-friendly
 
 Format your response as a valid JSON object with a "jokes" key containing an array of strings:
 {{"jokes": ["joke 1", "joke 2", "joke 3", ...]}}
@@ -174,11 +198,17 @@ Generate {num_jokes} unique, creative jokes now:"""
                 jokes = self._parse_response(full_content, num_jokes)
 
                 # Validate we got enough jokes
-                if len(jokes) >= int(num_jokes * 0.7):
+                if jokes and len(jokes) >= int(num_jokes * 0.7):
                     return jokes[:num_jokes]
-                else:
+                elif jokes:
+                    # Got some jokes but fewer than target
                     if attempt < self.max_retries - 1:
                         print(f"Attempt {attempt + 1}/{self.max_retries}: Only got {len(jokes)}/{num_jokes} jokes, retrying...")
+                    else:
+                        return jokes  # return what we have on last attempt
+                else:
+                    if attempt < self.max_retries - 1:
+                        print(f"Attempt {attempt + 1}/{self.max_retries}: No jokes extracted, retrying...")
 
             except json.JSONDecodeError as e:
                 print(f"Attempt {attempt + 1}/{self.max_retries}: JSON parsing error - {e}")
@@ -222,9 +252,10 @@ Generate {num_jokes} unique, creative jokes now:"""
                     return jokes
 
         except (json.JSONDecodeError, ValueError):
-            raise Exception(f"Failed to extract jokes!")
+            pass
 
-        print('Failed to extract jokes!')
+        print('Failed to extract jokes from response')
+        return []
 
     def _extract_jokes_from_json(self, jokes_data: dict) -> List[str]:
         """

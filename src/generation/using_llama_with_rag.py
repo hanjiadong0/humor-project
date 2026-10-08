@@ -27,6 +27,8 @@ Usage:
     )
 """
 
+from __future__ import annotations
+
 import os
 import json
 import torch
@@ -336,23 +338,23 @@ class RAGHumorGenerator:
         else:
             raise FileNotFoundError(f"RAG database not found at {self.config.RAG_INDEX_PATH}")
 
-    def generate(self, word1: str, word2: str) -> str:
+    def generate(self, word1: str, word2: str = "") -> str:
         """
-        🎯 MAIN GENERATION METHOD - Uses best quality settings by default
+        MAIN GENERATION METHOD - Uses best quality settings by default
 
         Generate a joke using RAG + Multi-Step Pipeline (default, best quality).
         For testing other modes, use generate_with_rag() directly.
 
         Args:
-            word1: First constraint word
-            word2: Second constraint word
+            word1: First constraint word (or headline text if word2 is empty)
+            word2: Second constraint word (empty string for headline mode)
 
         Returns:
             Generated joke string
 
         Example:
             >>> joke = generator.generate("coffee", "deadline")
-            >>> print(joke)
+            >>> joke = generator.generate("Scientists discover coffee is sentient")
         """
         result = self.generate_with_rag(word1=word1, word2=word2, use_rag=True, use_pipeline=True)
         return result['best_joke']
@@ -360,21 +362,25 @@ class RAGHumorGenerator:
     def generate_with_rag(
         self,
         word1: str,
-        word2: str,
-        use_rag: bool = True,       # ✅ DEFAULT: RAG enabled
-        use_pipeline: bool = True,  # ✅ DEFAULT: Pipeline enabled
+        word2: str = "",
+        use_rag: bool = True,       # DEFAULT: RAG enabled
+        use_pipeline: bool = True,  # DEFAULT: Pipeline enabled
         num_candidates: int = 1,
         return_retrieved: bool = False
     ) -> Dict:
         """
         Generate joke with configurable RAG and pipeline settings
 
-        ⚠️  DEFAULT SETTINGS: use_rag=True, use_pipeline=True (Best Quality)
+        DEFAULT SETTINGS: use_rag=True, use_pipeline=True (Best Quality)
         Only change these for testing/ablation studies!
 
+        Supports two modes:
+        - Word-pair mode (word2 non-empty): joke connecting both words
+        - Headline mode (word2=""): funny commentary on the headline in word1
+
         Args:
-            word1: First constraint word
-            word2: Second constraint word
+            word1: First constraint word (or headline text if word2 is empty)
+            word2: Second constraint word (empty string for headline mode)
             use_rag: Whether to use RAG (default=True for best quality)
             use_pipeline: Whether to use multi-step pipeline (default=True for best quality)
             num_candidates: Number of jokes to generate
@@ -386,8 +392,13 @@ class RAGHumorGenerator:
         retrieved_jokes = []
 
         if use_rag and self.rag_db is not None:
-            query = f"joke with {word1} and {word2}"
-            retrieved_jokes = self.rag_db.retrieve(query=query, word1=word1, word2=word2, k=self.config.TOP_K)
+            if word2:
+                query = f"joke with {word1} and {word2}"
+                retrieved_jokes = self.rag_db.retrieve(query=query, word1=word1, word2=word2, k=self.config.TOP_K)
+            else:
+                # Headline mode: retrieve jokes by headline content
+                query = f"funny commentary on: {word1}"
+                retrieved_jokes = self.rag_db.retrieve(query=query, k=self.config.TOP_K)
 
         generated_jokes = []
         if use_pipeline:
@@ -419,7 +430,7 @@ class RAGHumorGenerator:
         if retrieved_jokes:
             retrieved_block = "\n".join([f"- {j['joke']}" for j in retrieved_jokes[:3]])
 
-        text = f"{word1} {word2}"
+        text = f"{word1} {word2}".strip()
         pattern = random.choice(JOKE_PATTERNS)  # Random pattern selection
 
         llm = HFChatClient(self)
@@ -467,7 +478,10 @@ class RAGHumorGenerator:
 
     def _construct_prompt(self, word1: str, word2: str, retrieved_jokes: List[Dict]) -> str:
         """Construct prompt with optional RAG context (traditional single-step)"""
-        base_instruction = f"Generate a funny joke that naturally includes both of these words: '{word1}' and '{word2}'. The joke should be creative, humorous, and incorporate both words seamlessly."
+        if word2:
+            base_instruction = f"Generate a funny joke that naturally includes both of these words: '{word1}' and '{word2}'. The joke should be creative, humorous, and incorporate both words seamlessly."
+        else:
+            base_instruction = f"Generate a funny joke or humorous commentary about this headline: \"{word1}\". The joke should be creative and add a comedic twist."
 
         if not retrieved_jokes:
             return base_instruction
@@ -489,7 +503,7 @@ For each example below, humor may come from one or more of the following factors
 - Overly confident reasoning applied to something wrong
 - Sudden re-interpretation of earlier information
 - Misdirection followed by a clean punchline
-- Emotional contrast (calm setup → extreme or petty conclusion)
+- Emotional contrast (calm setup -> extreme or petty conclusion)
 - Timing and brevity (a sharp, minimal punchline)
 
 Below are jokes that successfully combine several of these mechanisms.
@@ -504,7 +518,8 @@ Examples:"""
         for i, joke_data in enumerate(retrieved_jokes[:3], 1):
             context += f"Example {i}: {joke_data['joke']}\n"
 
-        context += f"""\n- Create a NEW joke that naturally includes BOTH of these words: "{word1}" and "{word2}"
+        if word2:
+            context += f"""\n- Create a NEW joke that naturally includes BOTH of these words: "{word1}" and "{word2}"
 - The joke must use at least TWO humor mechanisms from the list above
 - The punchline should reframe the setup in an unexpected but internally consistent way
 - The humor should come from meaning, not wordplay alone
@@ -514,6 +529,17 @@ Examples:"""
 - DO NOT elaborate on joke.
 
 Generate only the joke text and nothing else., {base_instruction.lower()}"""
+        else:
+            context += f"""\n- Create a NEW funny reaction or commentary about this headline: "{word1}"
+- The joke must use at least TWO humor mechanisms from the list above
+- The punchline should reframe the headline in an unexpected but internally consistent way
+- The humor should come from meaning, not wordplay alone
+- Do NOT explain the joke
+- Do NOT reference the examples
+- DO NOT explain why is the joke funny.
+- DO NOT elaborate on joke.
+
+Generate only the joke text and nothing else."""
         return context
 
     def _generate_joke(self, prompt: str) -> str:

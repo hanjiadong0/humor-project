@@ -1,0 +1,3 @@
+id,text_norm,humor_clip,offense_clip,humor_controversy,is_humor,tok_len,char_len
+1547,My son Luke loves that we named our children after Star Wars characters. My daughter Chewbacca not so much.,4.0,0.0,0.0,1,21,107
+6600,I just got hired at a company that makes bicycle wheels!! I'm the spokesperson.,4.0,0.0,0.0,1,19,79

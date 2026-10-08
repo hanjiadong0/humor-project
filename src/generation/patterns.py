@@ -23,7 +23,7 @@ JOKE_PATTERNS = [
     "Understatement (tiny reaction to huge thing)",
     "Rule of Three (pattern → pattern → twist)",
     "Literalism (take figurative language literally)",
-    "Status Reversal (who’s ‘above’ flips)"
+    "Status Reversal (who's 'above' flips)"
 ]
 
 PATTERN_DEFINITIONS = {

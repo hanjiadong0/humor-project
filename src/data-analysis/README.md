@@ -1,4 +1,6 @@
-## EDA Summary for `hahackathon_train.csv` and Training Data Exports
+
+
+## 1) `hahackathon_train.csv` (Humor Scoring / Evaluator)
 
 ### 1. Goal
 
@@ -97,3 +99,84 @@ Based on the dataset structure, we export three datasets:
    - Purpose: multi-head training
    - Labels: `is_humor`, `offense_rating` always available; `humor_rating` and `humor_controversy` only when `has_humor_score=True`
    - Important: **mask the loss** for humor rating/controversy when `has_humor_score=False`
+
+
+## 2) JSONL Datasets for RAG and SFT
+
+### JSONL format
+
+Both JSONL datasets follow a ChatML-style schema:
+
+```json
+{
+  "messages": [{"role":"user","content":"..."},{"role":"assistant","content":"..."}],
+  "word1": "...",
+  "word2": "..."
+}
+```
+
+Validation:
+
+- Parsing errors: **0**
+- Missing required fields: **0**
+- Word constraint compliance: **100%** (assistant output contains both `word1` and `word2`)
+
+------
+
+### Dataset A: `humor_RAG_data_20000_RAG.jsonl` (RAG corpus)
+
+**Before dedup**
+
+- Rows: **20,000**
+- Answer duplication rate: **0.172**
+- Pair duplication rate (prompt+answer): **0.0**
+
+**After dedup by assistant answer**
+
+- Output: `humor_RAG_data_20000_RAG_dedupByAnswer.jsonl`
+- Rows: **16,557** (kept **82.78%**, dropped 3,443)
+- Answer duplication rate: **0.0**
+- Word constraint pass rate: **1.0**
+- Median / P90 answer length (chars): **114 / 142**
+
+**Recommended usage**
+
+- Use the **deduplicated** file as the primary **RAG retrieval corpus** to maximize diversity.
+
+------
+
+### Dataset B: `humor_training_data_5000_Train.jsonl` (SFT training)
+
+**Before dedup**
+
+- Rows: **5,000**
+- Answer duplication rate: **0.375**
+- Pair duplication rate (prompt+answer): **0.0**
+
+**After dedup by assistant answer**
+
+- Output: `humor_training_data_5000_Train_dedupByAnswer.jsonl`
+- Rows: **3,121** (kept **62.42%**, dropped 1,879)
+- Answer duplication rate: **0.0**
+- Word constraint pass rate: **1.0**
+- Median / P90 answer length (chars): **110 / 148**
+
+**Recommended usage**
+
+- Use the **deduplicated** file for **SFT fine-tuning** to reduce repetition and improve generalization.
+
+------
+
+### Scripts
+
+- `scripts/analyze_jsonl_humor.py`: format validation + constraint pass rate + duplication and length stats
+- `scripts/dedup_jsonl_by_answer.py`: deduplicate by normalized assistant answer text and export clean JSONL files
+
+------
+
+## What’s next (baseline training)
+
+- Humor detection (binary): train on `train_detector.csv`
+- Humor scoring: train on `train_scorer.csv` using:
+  - bucketed classification (low/mid/high) **and** regression baseline (MAE + Spearman)
+- Optional: multi-head model with masked loss using `train_multitask.csv
