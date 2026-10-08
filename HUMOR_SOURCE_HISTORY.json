@@ -1,0 +1,577 @@
+{
+  "status": "VERIFIED_FILTERED_LEARNING_HISTORY",
+  "original_commit_count": 50,
+  "final_snapshot_commit": "6f3cbcb582daeddc5a81c8f834e7c46ae3d78a16",
+  "refs": {
+    "refs/heads/learning-history-20261009/main": {
+      "original_ref": "refs/heads/main",
+      "original_head": "2b5f00ba28e49269ed85987ba9983f26323f5a4e",
+      "filtered_head": "6f3cbcb582daeddc5a81c8f834e7c46ae3d78a16",
+      "history_head": "f9cdb7293c8967cf2889c109eb77d8417baa777b"
+    },
+    "refs/heads/learning-history-20261009/original-remote/backup-local": {
+      "original_ref": "refs/remotes/origin/backup-local",
+      "original_head": "2d175c52486c24665af4a34a46459b54b5ff6a24",
+      "filtered_head": "5d834e3842d832b5c93349a038d0041dfbc890e8"
+    },
+    "refs/heads/learning-history-20261009/original-remote/main": {
+      "original_ref": "refs/remotes/origin/main",
+      "original_head": "c8e39c52f2ae9ee13509e0f763b37414d7d78b72",
+      "filtered_head": "c03b3fe7faa1e08e0d35a61997e5978be31cba82"
+    }
+  },
+  "commits": [
+    {
+      "original": "7f9baa56195695edbdd4d3d1586ee1cb4170b54c",
+      "parents": [],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1768327561 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1768327561 +0100",
+      "message_sha256": "14b7e04d5793dfc952fa50a4bc0a8887fca8f933757d493617edc87e90c664e6",
+      "retained_files": 2,
+      "filtered": "7f9baa56195695edbdd4d3d1586ee1cb4170b54c"
+    },
+    {
+      "original": "6e67e1877048c8618b05acb0cbfe2bce687befb2",
+      "parents": [
+        "7f9baa56195695edbdd4d3d1586ee1cb4170b54c"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1768327704 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1768327704 +0100",
+      "message_sha256": "32ca56b16d497bbfb5789cf52aba9fd679b42f09786031555f8c122c1c3abb63",
+      "retained_files": 3,
+      "filtered": "6e67e1877048c8618b05acb0cbfe2bce687befb2"
+    },
+    {
+      "original": "74d2511305b30bc73d8e2b15f465a1633723c0a5",
+      "parents": [
+        "6e67e1877048c8618b05acb0cbfe2bce687befb2"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1768327816 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1768327816 +0100",
+      "message_sha256": "392473432866c373db9783066af12734a9f9782dc187103d5d66f938bbe7306f",
+      "retained_files": 3,
+      "filtered": "74d2511305b30bc73d8e2b15f465a1633723c0a5"
+    },
+    {
+      "original": "036133b2a39e6a5915ac2ed07af5b3f43903f763",
+      "parents": [
+        "74d2511305b30bc73d8e2b15f465a1633723c0a5"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1768327944 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1768327944 +0100",
+      "message_sha256": "220a20270fbfe0fc0990e44391ee3922af4c3f06870cfc23f9d38778b7ce8221",
+      "retained_files": 3,
+      "filtered": "036133b2a39e6a5915ac2ed07af5b3f43903f763"
+    },
+    {
+      "original": "757c1b91c29dd4b772585018b59f6dfc52c7e2bb",
+      "parents": [
+        "036133b2a39e6a5915ac2ed07af5b3f43903f763"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1768328275 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1768328275 +0100",
+      "message_sha256": "e0cdcc0bae6fcda3e7e3ec83f798b914a4588e828657425021fb478b2107a876",
+      "retained_files": 3,
+      "filtered": "757c1b91c29dd4b772585018b59f6dfc52c7e2bb"
+    },
+    {
+      "original": "559956d537ca6e3ffec5b125e1198837d8d02abe",
+      "parents": [
+        "757c1b91c29dd4b772585018b59f6dfc52c7e2bb"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1768328513 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1768328513 +0100",
+      "message_sha256": "a0d932542881830b8ce59900b5607d88c5a6eab6432e3458d53e419c6a44f232",
+      "retained_files": 3,
+      "filtered": "559956d537ca6e3ffec5b125e1198837d8d02abe"
+    },
+    {
+      "original": "ebff80753c9794c3f3ca839296f2940f431ef15c",
+      "parents": [
+        "559956d537ca6e3ffec5b125e1198837d8d02abe"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1768328561 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1768328561 +0100",
+      "message_sha256": "a0d932542881830b8ce59900b5607d88c5a6eab6432e3458d53e419c6a44f232",
+      "retained_files": 3,
+      "filtered": "ebff80753c9794c3f3ca839296f2940f431ef15c"
+    },
+    {
+      "original": "f5f497a4d49f52af73676ceb28063fe7d3f1cc46",
+      "parents": [
+        "ebff80753c9794c3f3ca839296f2940f431ef15c"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1768605224 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1768605224 +0100",
+      "message_sha256": "7e01a15c54bb40dd7474398f1345c93c1298e36a081ae7a497de55df1fb92747",
+      "retained_files": 20,
+      "filtered": "08f3794d0940bd78309d83701709f25cd1b2a419"
+    },
+    {
+      "original": "91a39dcfaaede5c7b0a58d99ade4b3198e082d55",
+      "parents": [
+        "f5f497a4d49f52af73676ceb28063fe7d3f1cc46"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1768686833 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1768686833 +0100",
+      "message_sha256": "e718fe8d631badd39cf66ee04a7f9472c010f4530dbd649b2d64acace5083b9c",
+      "retained_files": 23,
+      "filtered": "ddb697281e32053f7254d7742443186bef81cf21"
+    },
+    {
+      "original": "78adecd6800a9630fa65383e6be9dfa8f6b18ee6",
+      "parents": [
+        "91a39dcfaaede5c7b0a58d99ade4b3198e082d55"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1768689977 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1768689977 +0100",
+      "message_sha256": "e718fe8d631badd39cf66ee04a7f9472c010f4530dbd649b2d64acace5083b9c",
+      "retained_files": 25,
+      "filtered": "c50d261ab1054bb431a4dd1cd081639c915c47dd"
+    },
+    {
+      "original": "272042ea134933ec772316139b7171a94be796c9",
+      "parents": [
+        "78adecd6800a9630fa65383e6be9dfa8f6b18ee6"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1768867073 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1768867073 +0100",
+      "message_sha256": "793c11bc770ac0b28d6d960360991a7cc2bbe34461955ee34a737ae8bf88624a",
+      "retained_files": 41,
+      "filtered": "6d8de3667d0614a6ce5aacb9b164e116a3af98de"
+    },
+    {
+      "original": "e17ee981bd8d706b92fa91f609678ea2e20e26b1",
+      "parents": [
+        "272042ea134933ec772316139b7171a94be796c9"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1768869249 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1768869249 +0100",
+      "message_sha256": "e718fe8d631badd39cf66ee04a7f9472c010f4530dbd649b2d64acace5083b9c",
+      "retained_files": 41,
+      "filtered": "2f130d44abb3aecf282fcc85d1e22ee29d678ca0"
+    },
+    {
+      "original": "149010e36644f7c8afb68885faf4a29f5eec0047",
+      "parents": [
+        "e17ee981bd8d706b92fa91f609678ea2e20e26b1"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1768869579 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1768869579 +0100",
+      "message_sha256": "9bada3eafa458c7e370517a5caba9edaa00bc0a7f138ab5968e1f4efb8c05fe2",
+      "retained_files": 42,
+      "filtered": "3066de11ff96dbf9a0ad2c7d44d3308d247f8df7"
+    },
+    {
+      "original": "0e968bf47ae749cbd079c92e4b006109e7bcbe37",
+      "parents": [
+        "149010e36644f7c8afb68885faf4a29f5eec0047"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1768870273 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1768870273 +0100",
+      "message_sha256": "7c45c77bb1051c0bed671194776fe6caa7c309d0d531adf28667ade19a494bc7",
+      "retained_files": 37,
+      "filtered": "4c9854ae9bb574defb6e77dd1ab5a9239ccaf74b"
+    },
+    {
+      "original": "a3d3fc10e411c206974f1b757d9bb7e99d873038",
+      "parents": [
+        "0e968bf47ae749cbd079c92e4b006109e7bcbe37"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1768870632 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1768870632 +0100",
+      "message_sha256": "d62fc28f7e40624625e134f93b12da912fa830375556239c992e3d2e46831c7e",
+      "retained_files": 37,
+      "filtered": "b59c8c24dcfea7b55462610811a98e950fb000b4"
+    },
+    {
+      "original": "2e8f2d7d9aa88286f72007f99700567b136775a3",
+      "parents": [
+        "a3d3fc10e411c206974f1b757d9bb7e99d873038"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1768871775 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1768871775 +0100",
+      "message_sha256": "6f0ce450c9662e06ad398dfcb957101b99ed9299d5bee699c795c41857286712",
+      "retained_files": 38,
+      "filtered": "3c5db3d86f99face49c45e7893d69ee1ad044db0"
+    },
+    {
+      "original": "fcbbc6399309cbfdd4ad802ed023d8fc7eb2bd09",
+      "parents": [
+        "2e8f2d7d9aa88286f72007f99700567b136775a3"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1769124388 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1769124388 +0100",
+      "message_sha256": "e718fe8d631badd39cf66ee04a7f9472c010f4530dbd649b2d64acace5083b9c",
+      "retained_files": 22,
+      "filtered": "9968ffd2ccc765a928e0febf86d1dde1cd54568d"
+    },
+    {
+      "original": "5497c6ea6d40bf5521bb83e75261cbfe896dd95e",
+      "parents": [
+        "fcbbc6399309cbfdd4ad802ed023d8fc7eb2bd09"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1769361369 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1769361369 +0100",
+      "message_sha256": "16fb0bb1cb41051e6371564293ad0ccf321ed7c5875c74f7c8483fedb9c551b0",
+      "retained_files": 22,
+      "filtered": "365ed54989dad0a4aaf49764ec27594e39c27089"
+    },
+    {
+      "original": "6d4e75e5106b95289f4ac6abd94a46bab0dbf9c0",
+      "parents": [
+        "5497c6ea6d40bf5521bb83e75261cbfe896dd95e"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1769361444 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1769361444 +0100",
+      "message_sha256": "40ac31241477c2de2ac35bbad18e818050fcf0386b01ec73743ee8b08ad5e968",
+      "retained_files": 22,
+      "filtered": "4f27b79abcc0a8f4b9bc21e8813738a4c847639c"
+    },
+    {
+      "original": "72a6a94e6fd15f523f9efa5cef3a34171aaad8b5",
+      "parents": [
+        "6d4e75e5106b95289f4ac6abd94a46bab0dbf9c0"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1769361564 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1769361564 +0100",
+      "message_sha256": "f65527e2f150b2a8c821a323eb437349056007332ebe4b32afd3c93b6eb4f13d",
+      "retained_files": 28,
+      "filtered": "876fb1c7a7ee17a4f4e3b31632ac9b235bda17b3"
+    },
+    {
+      "original": "d9da67f0c1196e941bad2b986efa881562364942",
+      "parents": [
+        "72a6a94e6fd15f523f9efa5cef3a34171aaad8b5"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1769741070 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1769741070 +0100",
+      "message_sha256": "2ed144a4dbd7c7af948d5d80a061d40bfeb585a16a7eacf4703685f28094903b",
+      "retained_files": 35,
+      "filtered": "4c87e9bf75502d8f3c3817aa1f9b9e56a00fd007"
+    },
+    {
+      "original": "2acf34dd1d5fd5bcf43b52f7f6b17a8f8087c6a7",
+      "parents": [
+        "d9da67f0c1196e941bad2b986efa881562364942"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770397840 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770397840 +0100",
+      "message_sha256": "1ebf814164614d28abeefd9eb32d97c05ab95ce25413546b4148cee3aca2bfd5",
+      "retained_files": 37,
+      "filtered": "1a5d06e19740d51445174ef6822248eac26a3ad3"
+    },
+    {
+      "original": "4ff66e151410370ebb8f3a0d96f3a4d16f579567",
+      "parents": [
+        "2acf34dd1d5fd5bcf43b52f7f6b17a8f8087c6a7"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770567267 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770567267 +0100",
+      "message_sha256": "02f4a4d233260ec1263d57dee4605107c54f5c0b7e25f3b8eb4098ecabb8ea96",
+      "retained_files": 38,
+      "filtered": "85b1f85be9328981df8e7ca459e8ef48ed05a4e1"
+    },
+    {
+      "original": "3e458e9aefffe00258cf8f80310ebff1eac291cf",
+      "parents": [
+        "4ff66e151410370ebb8f3a0d96f3a4d16f579567"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770569427 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770569427 +0100",
+      "message_sha256": "6515e0f91fc223d363f88eb121f002644cbef350135856f077a43a5bcc6421f9",
+      "retained_files": 33,
+      "filtered": "b24d1d261b5e57b98b28304578fac3be4d25afd2"
+    },
+    {
+      "original": "f7414e3ce2d7fceb9892c042fce867c7d89d1b78",
+      "parents": [
+        "3e458e9aefffe00258cf8f80310ebff1eac291cf"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770584263 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770584263 +0100",
+      "message_sha256": "cb888af9bb2f82f0e8c45f90ca1124b585df592bf377d9a729fcf6c957598fd5",
+      "retained_files": 87,
+      "filtered": "8276970511956cde122ee21638bfb003fe392279"
+    },
+    {
+      "original": "3eaa27e5d7489b6ac617f79f483d8fb272b8ad22",
+      "parents": [
+        "f7414e3ce2d7fceb9892c042fce867c7d89d1b78"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770584534 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770584534 +0100",
+      "message_sha256": "35ee9020d7c84343d02d024f563e3425b55d092475d45f18cf87dd1f5120421c",
+      "retained_files": 87,
+      "filtered": "853858778493a819b2e0e321043da4208ec08b7d"
+    },
+    {
+      "original": "ae97203602f561a15f582a362a6e539bfa64b4b6",
+      "parents": [
+        "3eaa27e5d7489b6ac617f79f483d8fb272b8ad22"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770589008 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770589008 +0100",
+      "message_sha256": "cb888af9bb2f82f0e8c45f90ca1124b585df592bf377d9a729fcf6c957598fd5",
+      "retained_files": 89,
+      "filtered": "22ba8a1ad1e94db01b723b237ff1eb91d6362c3f"
+    },
+    {
+      "original": "04cebdfbd1126cd07b76140c2e5be4747b0be3ff",
+      "parents": [
+        "ae97203602f561a15f582a362a6e539bfa64b4b6"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770590184 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770590184 +0100",
+      "message_sha256": "2202a3f89758241facc6683fd6daeb6c3d857985efe34d8e20322b0dd15b3c7c",
+      "retained_files": 91,
+      "filtered": "4e3bbf7375ce5412ee85d2212c624dce79e1b965"
+    },
+    {
+      "original": "8e4ee9a3be0b04c1af7390649957c294c6889b0a",
+      "parents": [
+        "04cebdfbd1126cd07b76140c2e5be4747b0be3ff"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770594466 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770594466 +0100",
+      "message_sha256": "556123e9c27f7ff3300923c83b2d52c233cc05d0bf577f71e32bced35ae6d924",
+      "retained_files": 91,
+      "filtered": "486dc693178c43d6f37d4f468bb9fa132b0496d6"
+    },
+    {
+      "original": "2b5f00ba28e49269ed85987ba9983f26323f5a4e",
+      "parents": [
+        "8e4ee9a3be0b04c1af7390649957c294c6889b0a"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770605672 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770605672 +0100",
+      "message_sha256": "489154f1579719c3b664d40beb4057a10b22e82c6b8a40a0b3f4b7e86176dc9f",
+      "retained_files": 92,
+      "filtered": "f9cdb7293c8967cf2889c109eb77d8417baa777b"
+    },
+    {
+      "original": "57eec9bd8747bae6ece573c389c7e3c1fe234376",
+      "parents": [],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770720091 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770720091 +0100",
+      "message_sha256": "11996441588417a27af10cd7c5e6abdb570f18b1c00048fb39a2e0775279736c",
+      "retained_files": 52,
+      "filtered": "6216ee36063f467a0cb2bd515261711acea238fa"
+    },
+    {
+      "original": "3f23179966e196c76b5518ff049dfaf23ff5785f",
+      "parents": [
+        "57eec9bd8747bae6ece573c389c7e3c1fe234376"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770721542 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770721542 +0100",
+      "message_sha256": "443409ee4a3b9f45e62ddc8c3f490d5d334d254bc888faa79e728f88573e9448",
+      "retained_files": 53,
+      "filtered": "2c77cd7a00586e587e38611f37e7ce59eae24cd8"
+    },
+    {
+      "original": "b3ad2fe93a0f12a5ee46ab012afb6d72e9ce160e",
+      "parents": [
+        "3f23179966e196c76b5518ff049dfaf23ff5785f"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770721963 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770721963 +0100",
+      "message_sha256": "6bc3d50b986c0846125476aebca05819b2d950602f9f675e55058e371631ea34",
+      "retained_files": 54,
+      "filtered": "726010f245656471ea005b3af3b566b570b0b829"
+    },
+    {
+      "original": "2d175c52486c24665af4a34a46459b54b5ff6a24",
+      "parents": [
+        "b3ad2fe93a0f12a5ee46ab012afb6d72e9ce160e"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770722600 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770722600 +0100",
+      "message_sha256": "c5662b617dfa6adc52386abaf58b9c7706576dd5d0e79be5fa0385219e972c0a",
+      "retained_files": 54,
+      "filtered": "5d834e3842d832b5c93349a038d0041dfbc890e8"
+    },
+    {
+      "original": "210e59ddb6a3b50ab473b93b73805a663993cfec",
+      "parents": [
+        "72a6a94e6fd15f523f9efa5cef3a34171aaad8b5",
+        "2d175c52486c24665af4a34a46459b54b5ff6a24"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770723409 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770723409 +0100",
+      "message_sha256": "c18769cdae56746c99173bd2a47d5705a01229d7211272ecab67bbe7aeb7f68c",
+      "retained_files": 28,
+      "filtered": "f609c4d6feb1fafc8b9334112fc3584e833004e4"
+    },
+    {
+      "original": "c9370771d599f3f8d128740e0b5112cc1af28ba5",
+      "parents": [
+        "210e59ddb6a3b50ab473b93b73805a663993cfec"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770723447 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770723447 +0100",
+      "message_sha256": "fccccf3db5dc904e9558cad34f9138bd5ff4e42f05d0b67bb702e6cea9681dd9",
+      "retained_files": 72,
+      "filtered": "0737311dbfd8eba9d4cdb0140618b812b47650f6"
+    },
+    {
+      "original": "ef371999bfbd009de75f94cdfabe0bedeb387635",
+      "parents": [
+        "c9370771d599f3f8d128740e0b5112cc1af28ba5"
+      ],
+      "author": "author Jiadong/Hans Han <38018421+hanjiadong0@users.noreply.github.com> 1770724807 +0100",
+      "committer": "committer GitHub <noreply@github.com> 1770724807 +0100",
+      "message_sha256": "0ce461d69b2495261cb4c8ff9862add1e41789f05da56c629dc02c1ffa11786f",
+      "retained_files": 73,
+      "filtered": "10242ee35b89c339e6bd97a7b85757727386d1d4"
+    },
+    {
+      "original": "2c0594332501cba72bc360a4c179defbb58a109a",
+      "parents": [
+        "ef371999bfbd009de75f94cdfabe0bedeb387635"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770740111 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770740111 +0100",
+      "message_sha256": "092a533b5c524986aab203b825b93b24f29ec2128e6fd322482cedbbc90df7f8",
+      "retained_files": 84,
+      "filtered": "45cb231df2b9885735d5bc15f8f78cf47ee0b2bd"
+    },
+    {
+      "original": "3b4e8b7b7662264052cb42dbd8bf41e6df371c50",
+      "parents": [
+        "2c0594332501cba72bc360a4c179defbb58a109a"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770743852 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770743852 +0100",
+      "message_sha256": "bfab58e0240950affe97652c8937e3e5ff89018023a9563d1965b0ed6f2030dd",
+      "retained_files": 86,
+      "filtered": "f19993f8b8710acb437ccbee7f19ee29722d6cc2"
+    },
+    {
+      "original": "04dc92e4b3cd06a228063d397e87347e0da7295b",
+      "parents": [
+        "3b4e8b7b7662264052cb42dbd8bf41e6df371c50"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770744023 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770744023 +0100",
+      "message_sha256": "e9f44228bf9052dcdd0a70743da84f8079e5edc29e0f04ae0b280c218d410f31",
+      "retained_files": 87,
+      "filtered": "edcff926ed75dd77862505f3a1383bae51037628"
+    },
+    {
+      "original": "90e825df94e2944cfa69417dd07fcf956ab8af3b",
+      "parents": [
+        "04dc92e4b3cd06a228063d397e87347e0da7295b"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770744457 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770744457 +0100",
+      "message_sha256": "6e52dd6ce5db54351d8014818eb0fba4d076e1050753931a374161d76ee66a9c",
+      "retained_files": 87,
+      "filtered": "b98d55188358e2c14b05ed292347c97f3094a6c3"
+    },
+    {
+      "original": "aebb14c71168e2f793de690f7dcecaa42ca1892f",
+      "parents": [
+        "90e825df94e2944cfa69417dd07fcf956ab8af3b"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770744654 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770744654 +0100",
+      "message_sha256": "4f8429b2486a18e71a805589c21c0dd5fdfb048d13573a48f2febd9c05b45ae9",
+      "retained_files": 86,
+      "filtered": "198f6675f6a27288dfeef9876bf1b69c33e972f3"
+    },
+    {
+      "original": "eb90bff20ad924d4e641fb9926e59367704185fb",
+      "parents": [
+        "aebb14c71168e2f793de690f7dcecaa42ca1892f"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770744791 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770744791 +0100",
+      "message_sha256": "4f8429b2486a18e71a805589c21c0dd5fdfb048d13573a48f2febd9c05b45ae9",
+      "retained_files": 82,
+      "filtered": "f695d399e9c1e97b58f389382f357798e0ca6527"
+    },
+    {
+      "original": "1da4ab244ee3a3e161da9437b62cf6d74ae66e60",
+      "parents": [
+        "eb90bff20ad924d4e641fb9926e59367704185fb"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770744893 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770744893 +0100",
+      "message_sha256": "4f8429b2486a18e71a805589c21c0dd5fdfb048d13573a48f2febd9c05b45ae9",
+      "retained_files": 77,
+      "filtered": "c49ef5b1e73c8629415b3b990d318b34f23b054a"
+    },
+    {
+      "original": "8972b96f5c03b620943111e30473d37efdc1f249",
+      "parents": [
+        "1da4ab244ee3a3e161da9437b62cf6d74ae66e60"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770744934 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770744934 +0100",
+      "message_sha256": "4f8429b2486a18e71a805589c21c0dd5fdfb048d13573a48f2febd9c05b45ae9",
+      "retained_files": 76,
+      "filtered": "0371d41d86d352610b4af2fc592bd8c760b9f485"
+    },
+    {
+      "original": "29ffddb7755c143011d4cf2b6e9b00aa956ccdfc",
+      "parents": [
+        "8972b96f5c03b620943111e30473d37efdc1f249"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770745203 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770745203 +0100",
+      "message_sha256": "4f8429b2486a18e71a805589c21c0dd5fdfb048d13573a48f2febd9c05b45ae9",
+      "retained_files": 68,
+      "filtered": "64739254d9ce1534c38f9ec661efede66fda66ea"
+    },
+    {
+      "original": "f0c186e5ce999ca2929ded5f52aa910f9619c18a",
+      "parents": [
+        "29ffddb7755c143011d4cf2b6e9b00aa956ccdfc"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770745430 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770745430 +0100",
+      "message_sha256": "4f8429b2486a18e71a805589c21c0dd5fdfb048d13573a48f2febd9c05b45ae9",
+      "retained_files": 68,
+      "filtered": "62605fa4c3f28b74e411874ac0676a4e8864ac44"
+    },
+    {
+      "original": "2b5dcab40332f48c89e9cf1842a81530a3a2d1fe",
+      "parents": [
+        "f0c186e5ce999ca2929ded5f52aa910f9619c18a"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770868154 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770868154 +0100",
+      "message_sha256": "2750fb490172c8cd1c97048c4cf0273fab6d3ea264308c9d393617341959569c",
+      "retained_files": 69,
+      "filtered": "1b9af04bf32875ab5421000d07bf91094aee2466"
+    },
+    {
+      "original": "39492bc162c29bbb3f174dfdbe53131816907fff",
+      "parents": [
+        "2b5dcab40332f48c89e9cf1842a81530a3a2d1fe"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770869301 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770869301 +0100",
+      "message_sha256": "2750fb490172c8cd1c97048c4cf0273fab6d3ea264308c9d393617341959569c",
+      "retained_files": 69,
+      "filtered": "171dee52bd3ae7711ce16c8381044e432dd25f7f"
+    },
+    {
+      "original": "c8e39c52f2ae9ee13509e0f763b37414d7d78b72",
+      "parents": [
+        "39492bc162c29bbb3f174dfdbe53131816907fff"
+      ],
+      "author": "author hanjiadong0 <hanjiadong0@gmail.com> 1770870042 +0100",
+      "committer": "committer hanjiadong0 <hanjiadong0@gmail.com> 1770870042 +0100",
+      "message_sha256": "2750fb490172c8cd1c97048c4cf0273fab6d3ea264308c9d393617341959569c",
+      "retained_files": 69,
+      "filtered": "c03b3fe7faa1e08e0d35a61997e5978be31cba82"
+    }
+  ],
+  "authors_committers_dates_messages_and_parent_graph_verified": true,
+  "original_commit_ids_preserved": false,
+  "max_retained_blob_bytes": 4303736,
+  "remaining_credential_candidates": [],
+  "scope": "Historical source, notebooks, notes, plots, scalar training records, and the final selected learning snapshot. Raw datasets, environments, training binaries, private configuration and credential values are omitted."
+}
